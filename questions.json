@@ -1,8 +1,8 @@
 {
-  "APP_ID": "phs-quizmaster-test",
-  "VERSION": "2026.09-test1",
-  "APP_TITLE": "PHS Quizmaster – Test",
-  "APP_SUBTITLE": "Quick test assessment",
+  "APP_ID": "pukekohetech-quizmaster-test",
+  "VERSION": "2026.09-test2",
+  "APP_TITLE": "PHS Quizmaster - Test",
+  "APP_SUBTITLE": "Quick submission test",
   "TEACHERS": [
     {
       "id": "RY",
@@ -23,11 +23,11 @@
   "ASSESSMENTS": [
     {
       "id": "test-selfreflection",
-      "title": "Learner Self-reflection – Test",
+      "title": "Learner Self-reflection - Test",
       "subtitle": "Quizmaster test: multiple-choice question",
       "attachSignoff": false,
-      "usNumber": "TEST01",
-      "usVersion": "v1",
+      "usNumber": "99999",
+      "usVersion": "test",
       "credits": 0,
       "standardType": "internal",
       "questions": [
@@ -55,11 +55,11 @@
     },
     {
       "id": "test-assessment-record",
-      "title": "Assessment Record – Test",
+      "title": "Assessment Record - Test",
       "subtitle": "Quizmaster test: assessment record question",
       "attachSignoff": false,
-      "usNumber": "TEST01",
-      "usVersion": "v1",
+      "usNumber": "99999",
+      "usVersion": "test",
       "credits": 0,
       "standardType": "internal",
       "questions": [
