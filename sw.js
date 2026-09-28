@@ -39,7 +39,6 @@ const NETWORK_FIRST_FILES = new Set([
   "reading-comfort.js",
   "resource.html",
   "questions.json",
-  "questions-data.js",
   "submission-settings.json",
   "manifest.webmanifest",
 ]);
