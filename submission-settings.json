@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "gateway": {
-    "url": "",
+    "url": "https://script.google.com/macros/s/AKfycbxocPiMMnIPX_0U6vdu4jV0CalGqiuSheW92_2FQ-Kby4UpdI2aX0MFYSBDv7H-DBt8/exec",
     "provider": "apps-script",
     "destinationLabel": "PHS Safety submission register"
   },
