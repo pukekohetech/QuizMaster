@@ -12,7 +12,6 @@ const CORE_ASSETS = [
   "./reading-comfort.js?v=2",
   "./resource.html",
   "./questions.json",
-  "./questions-data.js?v=1",
   "./submission-settings.json",
   "./blank.jpg",
   "./assessment.pdf",
