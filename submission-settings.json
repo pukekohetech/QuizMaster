@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "gateway": {
+    "url": "",
+    "provider": "apps-script",
+    "destinationLabel": "PHS Safety submission register"
+  },
+  "features": {
+    "submitPdf": true,
+    "submitPuk": true
+  }
+}

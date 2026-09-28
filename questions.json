@@ -1,11 +1,12 @@
+
 {
-  "APP_ID": "Knowledge Assessment - US 25920 (v3) Use joints for a BCATS project",
-  "VERSION": "2026",
-  "APP_TITLE": "US 25920 (v3) Use joints for a BCATS project",
-  "APP_SUBTITLE": "Knowledge Assessment - Short Answer Friendly (no giveaways)",
+  "APP_ID": "pukekohetech-24352",
+  "VERSION": "2025.12-clean",
+  "APP_TITLE": "US 24352 – Safety Knowledge",
+  "APP_SUBTITLE": "PHS - L1 Building – Assessment",
   "DEADLINE": {
-    "day": 30,
-    "month": 12,
+    "day": 28,
+    "month": 8,
     "label": "Submission deadline"
   },
   "TEACHERS": [
@@ -27,243 +28,1250 @@
   ],
   "ASSESSMENTS": [
     {
-      "id": "US 25920 (v3) - Knowledge Quiz",
-      "title": "US 25920 v3 Knowledge Assessment",
-      "attachSignoff": true,
-      "subtitle": "Use joints for a BCATS project",
-      "usNumber": "US 25920",
-      "usVersion": "3",
-      "credits": 3,
+      "id": "24352-selfreflection1",
+      "title": "Learner Self-reflection 1 – 24352 (v3)",
+      "attachSignoff": false,
+      "subtitle": "US 24352 – Eye and Respiratory PPE",
+      "usNumber": "24352",
+      "usVersion": "v3",
+      "credits": 2,
       "standardType": "internal",
       "questions": [
         {
-          "id": "q1_timber_two_checks",
-          "text": "1.\tWhat are two checks you can make on timber you have selected for a project?",
-          "image": "wooddefects.png",
-          "hint": "Look in the Wood joints section about selecting and preparing timber (around page 7). Give TWO different checks.",
+          "id": "q1a_face_shields",
+          "text": "Match the appropriate eye protection PPE to the hazard.\n\nPPE Type: Polycarbonate face shields",
+          "image": "q1a_face_shields.jpg",
+          "hint": "Think about fast-moving chips/particles and the need to protect more than just the eyes.",
+          "type": "mc",
+          "maxPoints": 1,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "^High velocity particles$",
+              "flags": "i"
+            }
+          ],
+          "options": [
+            "Low velocity flying particles and objects",
+            "Medium velocity small flying particles",
+            "High velocity particles",
+            "Gas vapours, dust and fumes",
+            "Non-ionizing radiation and glare",
+            "Infrared and UV radiation (arc welding)"
+          ]
+        },
+        {
+          "id": "q1b_hood_helmet",
+          "text": "Match the appropriate eye protection PPE to the hazard.\n\nPPE Type: Hood and helmet (completely sealing the face)",
+          "image": "q1b_hood_helmet.jpg",
+          "hint": "If it seals, what kind of hazard is it trying to keep OUT of your breathing/eye area?",
+          "type": "mc",
+          "maxPoints": 1,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "^Gas vapours, dust and fumes$",
+              "flags": "i"
+            }
+          ],
+          "options": [
+            "Low velocity flying particles and objects",
+            "Medium velocity small flying particles",
+            "High velocity particles",
+            "Gas vapours, dust and fumes",
+            "Non-ionizing radiation and glare",
+            "Infrared and UV radiation (arc welding)"
+          ]
+        },
+        {
+          "id": "q1c_wide_goggles",
+          "text": "Match the appropriate eye protection PPE to the hazard.\n\nPPE Type: Wide vision goggles",
+          "image": "q1c_wide_goggles.jpg",
+          "hint": "Think about higher-energy chips than normal workshop tasks (more impact protection than basic glasses).",
+          "type": "mc",
+          "maxPoints": 1,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "^Medium velocity small flying particles$",
+              "flags": "i"
+            }
+          ],
+          "options": [
+            "Low velocity flying particles and objects",
+            "Medium velocity small flying particles",
+            "High velocity particles",
+            "Gas vapours, dust and fumes",
+            "Non-ionizing radiation and glare",
+            "Infrared and UV radiation (arc welding)"
+          ]
+        },
+        {
+          "id": "q1d_safety_glasses",
+          "text": "Match the appropriate eye protection PPE to the hazard.\n\nPPE Type: Safety glasses",
+          "image": "q1d_safety_glasses.jpg",
+          "hint": "General workshop protection for typical jobs with small chips.",
+          "type": "mc",
+          "maxPoints": 1,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "^Low velocity flying particles and objects$",
+              "flags": "i"
+            }
+          ],
+          "options": [
+            "Low velocity flying particles and objects",
+            "Medium velocity small flying particles",
+            "High velocity particles",
+            "Gas vapours, dust and fumes",
+            "Non-ionizing radiation and glare",
+            "Infrared and UV radiation (arc welding)"
+          ]
+        },
+        {
+          "id": "q1e_filter_lens",
+          "text": "Match the appropriate eye protection PPE to the hazard.\n\nPPE Type: Safety glasses/goggles with filter lens",
+          "image": "q1e_filter_lens.jpg",
+          "hint": "Filter lenses reduce glare/brightness from certain hot-work processes.",
+          "type": "mc",
+          "maxPoints": 1,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "^Non-ionizing radiation and glare$",
+              "flags": "i"
+            }
+          ],
+          "options": [
+            "Low velocity flying particles and objects",
+            "Medium velocity small flying particles",
+            "High velocity particles",
+            "Gas vapours, dust and fumes",
+            "Non-ionizing radiation and glare",
+            "Infrared and UV radiation (arc welding)"
+          ]
+        },
+        {
+          "id": "q1f_welding_helmet",
+          "text": "Match the appropriate eye protection PPE to the hazard.\n\nPPE Type: Welding helmet",
+          "image": "q1f_welding_helmet.jpg",
+          "hint": "Consider the type of light/energy produced during arc welding.",
+          "type": "mc",
+          "maxPoints": 1,
+          "rubric": [
+            {
+              "points": 1,
+             "check": "^Infrared and UV radiation \\(arc welding\\)$",
+
+              "flags": "i"
+            }
+          ],
+          "options": [
+            "Low velocity flying particles and objects",
+            "Medium velocity small flying particles",
+            "High velocity particles",
+            "Gas vapours, dust and fumes",
+            "Non-ionizing radiation and glare",
+            "Infrared and UV radiation (arc welding)"
+          ]
+        },
+        {
+          "id": "q2a_sanding_timber",
+          "text": "Activity 1: Sanding timber – what is the appropriate respiratory protection?",
+          "image": "q2a_sanding_timber.jpg",
+          "hint": "Think: dust in the air (particulate).",
+          "type": "mc",
+          "maxPoints": 1,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "^Dust mask / particulate respirator for sanding timber$",
+              "flags": "i"
+            }
+          ],
+          "options": [
+            "Dust mask / particulate respirator for sanding timber",
+            "Welding respirator for arc welding",
+            "Respirator with appropriate filters for spraying glue",
+            "Air-fed breathing apparatus for two-pot paint"
+          ]
+        },
+        {
+          "id": "q2b_arc_welding",
+          "text": "Activity 2: Arc welding – what is the appropriate respiratory protection?",
+          "image": "q2b_arc_welding.jpg",
+          "hint": "Think: fumes/smoke created by the process (not just dust).",
+          "type": "mc",
+          "maxPoints": 1,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "^Welding respirator for arc welding$",
+              "flags": "i"
+            }
+          ],
+          "options": [
+            "Dust mask / particulate respirator for sanding timber",
+            "Welding respirator for arc welding",
+            "Respirator with appropriate filters for spraying glue",
+            "Air-fed breathing apparatus for two-pot paint"
+          ]
+        },
+        {
+          "id": "q2c_spraying_glue",
+          "text": "Activity 3: Spraying glue – what is the appropriate respiratory protection?",
+          "image": "q2d_spraying_two_pot.jpg",
+          "hint": "Think: chemical vapours/aerosols (filters matter).",
+          "type": "mc",
+          "maxPoints": 1,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "^Respirator with appropriate filters for spraying glue$",
+              "flags": "i"
+            }
+          ],
+          "options": [
+            "Dust mask / particulate respirator for sanding timber",
+            "Welding respirator for arc welding",
+            "Respirator with appropriate filters for spraying glue",
+            "Air-fed breathing apparatus for two-pot paint"
+          ]
+        },
+        {
+          "id": "q2d_spraying_two_pot",
+          "text": "Activity 4: Spraying ‘two-pot’ paint – what is the appropriate respiratory protection?",
+          "image": "q2c_spraying_glue.jpg",
+          "hint": "Think: the highest-risk spray process in the list (needs its own clean air supply).",
+          "type": "mc",
+          "maxPoints": 1,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "^Air-fed breathing apparatus for two-pot paint$",
+              "flags": "i"
+            }
+          ],
+          "options": [
+            "Dust mask / particulate respirator for sanding timber",
+            "Welding respirator for arc welding",
+            "Respirator with appropriate filters for spraying glue",
+            "Air-fed breathing apparatus for two-pot paint"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "24352-selfreflection2",
+      "title": "Learner Self-reflection 2 – 24352 (v3)",
+      "subtitle": "US 24352 – Safe working practices in a BCATS environment",
+      "usNumber": "24352",
+      "usVersion": "v3",
+      "credits": 2,
+      "standardType": "internal",
+      "questions": [
+{
+  "id": "q1_rules",
+  "text": "Compile a list of rules/codes of conduct that would ensure safe working practices in a BCATS environment.\n\nExample: Wear appropriate eye protection at all times.",
+  "image": "q1_rules.jpg",
+  "hint": "Cover behaviour, PPE, clothing/hair, housekeeping, supervision, and reporting hazards.",
+  "type": "long",
+  "maxPoints": 8,
+  "rubric": [
+      {
+          "points": 1,
+          "check": "\\b(PPE|personal\\s+protective\\s+equipment|protective\\s+equipment|protective\\s+gear|safety\\s+gear|safety\\s+equipment|wear\\s+the\\s+correct\\s+PPE|wear\\s+appropriate\\s+PPE|wear\\s+correct\\s+safety\\s+gear|eye\\s+protection|safety\\s+glasses|glasses|goggles|hearing\\s+protection|ear\\s+muffs?|earmuffs?|ear\\s+plugs?|earplugs?|dust\\s+mask|mask|respirator|face\\s+shield|visor|gloves?|apron|overalls?|boots?|work\\s+boots?|closed\\s*toe\\s+shoes?|covered\\s+shoes?|steel\\s*cap\\s+boots?|steelcaps?|hard\\s+hat|helmet)\\b",
+          "flags": "i"
+        },
+        {
+          "points": 1,
+          "check": "\\b(clean|tidy|keep\\s+(the\\s+)?workshop\\s+clean|keep\\s+(the\\s+)?workshop\\s+tidy|clean\\s+up|tidy\\s+up|pack\\s+up|pack\\s+away|put\\s+away|put\\s+tools?\\s+away|store\\s+tools?|return\\s+tools?|housekeeping|sweep|vacuum|wipe\\s+up|clear\\s+up|keep\\s+(the\\s+)?(bench|floor|area|workspace|walkway|work\\s+area)\\s+clear|keep\\s+pathways?\\s+clear|remove\\s+offcuts?|pick\\s+up\\s+rubbish|rubbish|waste|scraps?|offcuts?|bin\\s+the\\s+rubbish|spill|spills?)\\b",
+          "flags": "i"
+        },
+        {
+          "points": 1,
+          "check": "\\b(no\\s+running|don'?t\\s+run|never\\s+run|walk\\s+only|no\\s+horseplay|no\\s+messing\\s+around|don'?t\\s+mess\\s+around|never\\s+mess\\s+around|no\\s+mucking\\s+around|don'?t\\s+play\\s+around|don'?t\\s+distract\\s+others?|don'?t\\s+push|no\\s+pushing|no\\s+shoving|no\\s+throwing|behave\\s+properly|act\\s+responsibly|be\\s+careful|don'?t\\s+fool\\s+around|don'?t\\s+ muck\\s+around|stay\\s+focused)\\b",
+          "flags": "i"
+        },
+        {
+          "points": 1,
+          "check": "\\b(tie\\s+back\\s+(long\\s+)?hair|tie\\s+(your\\s+)?hair\\s+up|tie\\s+up\\s+(long\\s+)?hair|keep\\s+hair\\s+tied\\s+back|keep\\s+long\\s+hair\\s+back|hair\\s+restraint|hair\\s+net|put\\s+your\\s+hair\\s+up|no\\s+loose\\s+hair|long\\s+hair\\s+must\\s+be\\s+tied\\s+back|secure\\s+long\\s+hair)\\b",
+          "flags": "i"
+        },
+        {
+          "points": 1,
+          "check": "\\b(no\\s+loose\\s+clothing|loose\\s+clothing|baggy\\s+clothes?|baggy\\s+clothing|tight\\s*fitting\\s+clothes?|roll\\s+up\\s+your\\s+sleeves?|roll\\s+sleeves?\\s+up|remove\\s+jewell?ery|take\\s+off\\s+jewell?ery|no\\s+jewell?ery|don'?t\\s+wear\\s+jewell?ery|no\\s+necklace|no\\s+necklaces|no\\s+rings?|no\\s+bracelets?|no\\s+watch|no\\s+watches|no\\s+scarf|no\\s+scarves|no\\s+tie|no\\s+ties|remove\\s+tie|remove\\s+watch|drawstrings?|tuck\\s+in\\s+loose\\s+clothes?)\\b",
+          "flags": "i"
+        },
+        {
+          "points": 1,
+          "check": "\\b(stop\\s+work|stop\\s+using\\s+it|stop\\s+using\\s+the\\s+machine|stop\\s+what\\s+you\\s+are\\s+doing|turn\\s+it\\s+off|turn\\s+off\\s+the\\s+machine|switch\\s+it\\s+off|switch\\s+off\\s+the\\s+machine|shut\\s+it\\s+down|isolate|isolate\\s+the\\s+machine|tag\\s+out|lock\\s+out|lockout|do\\s+not\\s+use|don'?t\\s+use\\s+it|out\\s+of\\s+order|danger\\s+tag|unsafe\\s+machine|remove\\s+from\\s+use)\\b",
+          "flags": "i"
+        },
+        {
+          "points": 1,
+          "check": "\\b(report|report\\s+it|report\\s+hazards?|report\\s+unsafe\\s+behaviour|tell\\s+the\\s+teacher|tell\\s+teacher|inform\\s+the\\s+teacher|inform\\s+teacher|let\\s+the\\s+teacher\\s+know|let\\s+teacher\\s+know|notify\\s+the\\s+teacher|hazard|hazards|unsafe|dangerous|broken|faulty|damaged|defective|near\\s+miss|injury|injuries|accident|incident|report\\s+accidents?)\\b",
+          "flags": "i"
+        },
+        {
+          "points": 1,
+          "check": "\\b(ask\\s+permission|get\\s+permission|permission|ask\\s+the\\s+teacher\\s+first|teacher\\s+permission|supervision|under\\s+supervision|teacher\\s+present|teacher\\s+must\\s+be\\s+present|follow\\s+instructions|follow\\s+the\\s+instructions|listen\\s+to\\s+instructions|listen\\s+to\\s+the\\s+teacher|listen\\s+carefully|teacher'?s\\s+instructions|trained|be\\s+trained|do\\s+not\\s+use\\s+machines?\\s+alone|don'?t\\s+use\\s+machines?\\s+alone|ask\\s+for\\s+help\\s+if\\s+unsure|ask\\s+for\\s+help|if\\s+unsure\\s+ask|only\\s+use\\s+equipment\\s+if\\s+trained)\\b",
+          "flags": "i"
+        },
+        {
+          "points": 1,
+          "check": "\\b(guard|guards|safety\\s+guard|machine\\s+guard|machine\\s+guarding|keep\\s+guards?\\s+on|leave\\s+guards?\\s+on|don'?t\\s+remove\\s+guards?|never\\s+remove\\s+guards?|push\\s+stick|push\\s+block|use\\s+a\\s+push\\s+stick|use\\s+a\\s+push\\s+block|keep\\s+fingers?\\s+away\\s+from\\s+the\\s+blade|keep\\s+hands?\\s+away\\s+from\\s+moving\\s+parts?|keep\\s+hands?\\s+clear\\s+of\\s+blades?)\\b",
+          "flags": "i"
+        },
+        {
+          "points": 1,
+          "check": "\\b(correct\\s+tool|right\\s+tool|proper\\s+tool|use\\s+the\\s+right\\s+tool|use\\s+tools?\\s+properly|use\\s+equipment\\s+properly|follow\\s+procedure|follow\\s+the\\s+procedure|set\\s+up\\s+correctly|correct\\s+set\\s+up|clamp|clamp\\s+the\\s+work|secure\\s+the\\s+work|secure\\s+your\\s+work|check\\s+tools?|inspect\\s+tools?|check\\s+equipment|inspect\\s+equipment|don'?t\\s+use\\s+damaged\\s+tools?|don'?t\\s+use\\s+broken\\s+tools?|maintain\\s+tools?|maintenance)\\b",
+          "flags": "i"
+        },
+        {
+          "points": 1,
+          "check": "\\b(lift|lifting|manual\\s+handling|bend\\s+your\\s+knees|bend\\s+knees|team\\s+lift|two\\s+person\\s+lift|two\\s+people\\s+lift|ask\\s+for\\s+help\\s+lifting|get\\s+help\\s+lifting|back\\s+straight|do\\s+not\\s+lift\\s+heavy|don'?t\\s+lift\\s+heavy|use\\s+a\\s+trolley|trolley|carry\\s+safely|lift\\s+safely|safe\\s+lifting)\\b",
+          "flags": "i"
+        }
+  ]
+}
+,
+{
+  "id": "q1b_consequences",
+  "text": "For each rule listed in Question 1 (a–h), describe a possible consequence if that rule is not followed.",
+  "image": "q1b_consequences.jpg",
+  "hint": "Link each rule to a realistic injury/accident (eyes, lungs, hearing, entanglement, trips/falls, strains).",
+  "type": "long",
+  "maxPoints": 8,
+   "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(eye|eyes|vision|sight|blind|blindness|chip\\s?in\\s?eye|dust\\s?in\\s?eye|spark(s)?|splinter|shard|scratch(ed|ing)?\\s?eye|eye\\s?injur(y|ies)|eye\\s?damage|permanent\\s?eye\\s?damage)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(hearing|ears?|deaf|deafness|tinnitus|ringing\\s?in\\s?ears|ear\\s?ringing|hearing\\s?loss|noise\\s?damage|loud\\s?noise|noise\\s?induced\\s?hearing\\s?loss)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(hair|scalp|head|neck)\\b.*\\b(caught|pulled|tangled|entangle(d)?|dragged|stuck)\\b|\\bscalp(ed|ing)?\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(cloth(e|i)ng|sleeve(s)?|hoodie|drawstring(s)?|scarf|tie|jewell?ery|necklace|ring|bracelet|watch|earrings?)\\b.*\\b(caught|snag(ged)?|pulled|tangled|entangle(d)?|dragged|stuck)\\b|\\bchok(e|ing|ed)|strangle(d|ing)?\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(trip(ped|ping)?|slip(ped|ping)?|fall|fell|stumble(d|ing)?|clutter|mess(y)?|offcuts?|tools?\\s?on\\s?the\\s?floor|cords?|leads?|cables?|spill(s|ed)?|wet\\s?floor|sawdust)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(back|spine|manual\\s?handling|lift(ing|ed)?|strain(ed|ing)?|sprain(ed|ing)?|pulled\\s?muscle|hurt\\s?back|back\\s?pain|dropped\\s?(it|load|object)|crush(ing|ed)?\\s?injur(y|ies)|fracture(s)?|puncture\\s?wound(s)?|foot|feet|toe(s)?)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(guard(s)?\\s?(missing|removed|off)|unguarded|blade\\s?exposed|fingers?\\s?(cut|cuts|cutting|sliced|amputat(e|ed|ion))|kickback|pull(ed|ing)?\\s?in|caught\\s?in\\s?(the\\s?)?blade|hit\\s?by\\s?the\\s?blade)\\b|\\b(safe\\s*guards?|safety\\s*guards?|machine\\s*guards?|guards?|guarding)\\b.{0,260}\\b(missing|removed|off|not\\s?(used|kept|on|in\\s?place)|blade|exposed|protect|fall|falling|catch|caught|pull|pulled|cut|sliced|crush|amputat(e|ed|ion)|injur(y|ies)|injured|hurt|harm)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(wrong\\s?tool|incorrect\\s?tool|tool\\s?slip(ped|ping)?|loss\\s?of\\s?control|work\\s?piece\\s?(move(s|d)?|slip(s|ped)?|fly(s|ing)?|shift(s|ed)?)|not\\s?clamped|unclamped|hit\\s?(yourself|someone)|damage\\s?to\\s?project|break(s|ing)?\\s?the\\s?tool|improper\\s?use|misuse\\s?of\\s?equipment|untrained|not\\s?trained|unauthorised|unauthorized)\\b|\\b(machine|tool|equipment)\\b.{0,100}\\b(without|no)\\b.{0,80}\\b(teacher'?s?|instructor'?s?|staff)\\b.{0,60}\\b(permission|approval|supervision|instruction|training)\\b|\\b(without|no)\\b.{0,80}\\b(teacher'?s?|instructor'?s?|staff)\\b.{0,60}\\b(permission|approval|supervision|instruction|training)\\b.{0,120}\\b(machine|tool|equipment|operate|use|start)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(dust|sawdust|wood\\s?chips?|MDF\\s?dust|concrete\\s?dust|silica|fume(s)?|vapou?r(s)?|spray|chemical(s)?|inhale(d|ing)?|breathe\\s?in|lungs?|lung\\s?damage|respiratory|asthma|cough(ing)?|wheez(e|ing)|short\\s?of\\s?breath|silicosis|cancer|dizzy|faint|sick)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(high\\s?visibility|hi\\s?vis|visible|not\\s?seen|operator(s)?|vehicle(s)?|forklift|machinery|struck\\s?by|hit\\s?by|collision|run\\s?over|near\\s?miss|hazard(s)?\\s?remain|unaddressed|repeat\\s?accident|someone\\s?else\\s?could\\s?be\\s?injured|unsafe|injur(y|ies)|injured|hurt|harm|accident(s)?|incident(s)?|serious\\s?injury|hospital|cut(s)?|bruise(s)?|burn(s)?|crush(ed|ing)?|smashed\\s?fingers?)\\b|\\b(hazard(s)?|fault(s)?|danger|dangerous|unsafe|broken|damaged|defect(ive)?)\\b.{0,220}\\b(not\\s?(reported|fixed|removed|addressed)|remain(s|ed)?|unaddressed|teacher\\s?(doesn'?t|won'?t|wouldn'?t)\\s?know|someone|others?|people|student|injur(y|ies)|injured|hurt|harm|accident|incident)\\b|\\b(don'?t|doesn'?t|didn'?t|not|fail(ed)?\\s?to)\\b.{0,100}\\b(report|tell|inform)\\b.{0,180}\\b(hazard(s)?|fault(s)?|danger|unsafe|teacher|injur(y|ies)|injured|hurt|harm|accident|incident)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(run|running|ran|rush|rushing|horseplay|playing\\s?around|chase|chasing)\\b.{0,220}\\b(bump|bumped|collide|collided|collision|knock|knocked|trip|tripped|slip|slipped|fall|fell|machine|blade|equipment|tool|work\\s?piece|distract|injur(y|ies)|injured|hurt|harm|accident|incident)\\b",
+      "flags": "i"
+    }
+  ]
+}
+,
+      {
+  "id": "q2_jandals",
+  "text": "Q2: Why should jandals never be worn on a work site?",
+  "image": "q2_jandals.jpg",
+  "hint": "Think about toe protection, grip, and what happens if something sharp/heavy lands on your foot.",
+  "type": "short",
+  "maxPoints": 1,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(open\\s?toe|open\\s?-?toed|toes?\\s?(exposed|showing|out)|bare\\s?toes?|bare\\s?feet|no\\s?(toe|foot)\\s?protection|not\\s?(safe|protective)|unsafe\\s?(footwear|shoes?)|wrong\\s?(footwear|shoes?)|need\\s?(boots?|safety\\s?boots?|covered\\s?shoes?)|should\\s?wear\\s?(boots?|safety\\s?boots?|covered\\s?shoes?)|drop(ped)?\\s?(something|tool|hammer|timber)?\\s?(on\\s?(your\\s?)?foot|on\\s?(your\\s?)?toes?)|crush(ed|ing)?\\s?(foot|toes?)|smashed\\s?(foot|toes?)|break\\s?(your\\s?)?(foot|toe|toes)|step\\s?on\\s?(a\\s?)?(nail|screw|glass|sharp\\s?object|something\\s?sharp)|nail\\s?(in|through)\\s?(your\\s?)?foot|cut\\s?(your\\s?)?foot|stab(bed)?\\s?(your\\s?)?foot|puncture\\s?(wound)?|slip(ping|ped)?|poor\\s?grip|no\\s?grip|bad\\s?grip|no\\s?traction|poor\\s?traction|trip(ping|ped)?|fall\\s?over|lose\\s?(your\\s?)?footing|come\\s?off|falls?\\s?off|slip\\s?off|not\\s?secure)\\b",
+      "flags": "i"
+    }
+  ]
+},
+       {
+  "id": "q3a_heat_sparks",
+  "text": "Q3: Identify the hazard – What type of clothing would be a hazard to wear around heat or sparks?",
+  "image": "q3a_heat_sparks.jpg",
+  "hint": "Think about fabrics that melt or catch easily, and clothing that leaves skin exposed.",
+  "type": "short",
+  "maxPoints": 1,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(synthetic|man\\s?made|polyester|nylon|acrylic|plastic|fleece|sports\\s?clothes?|rain\\s?coat|wind\\s?breaker|melts?|melt\\s?on(to)?\\s?(your\\s?)?skin|flammable|catch\\s?fire|burn(s|t)?\\s?easily|ignite(s|d)?)\\b|\\b(shorts|skirt|dress|singlet|tank\\s?top|sleeveless|t-?shirt|short\\s?sleeves?|thin\\s?clothing|bare\\s?skin|bare\\s?(arms?|legs?)|exposed\\s?skin|not\\s?covered\\s?up|school\\s?uniform)\\b",
+      "flags": "i"
+    }
+  ]
+},
+{
+  "id": "q3b_machinery_lathes",
+  "text": "Q3: Identify the hazard – What type of clothing would be a hazard to wear around machinery such as lathes?",
+  "image": "q3b_machinery_lathes.jpg",
+  "hint": "Think about anything that can get caught in moving parts.",
+  "type": "short",
+  "maxPoints": 1,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(loose|baggy|dangl(e|ing)|hanging|oversized|flow(y|ing)|long\\s?sleeves?|loose\\s?sleeves?|baggy\\s?sleeves?|hoodie|jacket|coat|apron)\\b.*\\b(clothing|clothes|sleeves?|strings?|drawstrings?|cords?)\\b|\\b(hoodie\\s?strings?|drawstrings?|lanyard|ID\\s?card|tie|scarf|headphones?|earphones?)\\b|\\b(jewell?ery|jewelry|necklace|chain|bracelet|bangle|ring|watch|earrings?)\\b|\\b(get\\s?caught|caught\\s?in|get\\s?pulled\\s?in|pulled\\s?into|wrapped\\s?around|entangle(d)?|tangle(d)?)\\b",
+      "flags": "i"
+    }
+  ]
+}
+,
+{
+  "id": "q3c_spraying_paint",
+  "text": "Q3: Identify the hazard – What type of clothing would be a hazard to wear when spraying paint?",
+  "image": "q3c_spraying_paint.jpg",
+  "hint": "Think about overspray/chemicals contacting skin and clothing that doesn’t cover your body.",
+  "type": "short",
+  "maxPoints": 1,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(shorts|t-?shirt|singlet|tank\\s?top|sleeveless|short\\s?sleeves?|school\\s?uniform|skirt|dress|thin\\s?clothing|bare\\s?(arms?|legs?)|exposed\\s?skin|bare\\s?skin|not\\s?covered\\s?up|no\\s?(overalls?|coveralls?|spray\\s?suit|protective\\s?clothing|apron))\\b|\\b(overspray|paint\\s?(spray)?|chemicals?)\\b.*\\b(skin|irritat(e|ion)|rash|burn(s)?|dermatitis)\\b",
+      "flags": "i"
+    }
+  ]
+}
+,
+        {
+  "id": "q4_long_hair_machinery",
+  "text": "Q4: Identify the potential hazards of wearing long hair around machinery.",
+  "image": "q4_long_hair_machinery.jpg",
+  "hint": "What can moving parts do if they grab hair?",
+  "type": "short",
+  "maxPoints": 1,
+  "rubric": [
+  {
+      "points": 1,
+      "check": "\\b(hair|long\\s?hair)\\b.*\\b(caught|catch|grab(bed)?|stuck|get\\s?caught|tangle(d)?|entangle(d)?|wrap(ped)?|pulled|dragged|pulled\\s?in|dragged\\s?in)\\b|\\b(caught|catch|grab(bed)?|stuck|get\\s?caught|tangle(d)?|entangle(d)?|wrap(ped)?|pulled|dragged|pulled\\s?in|dragged\\s?in)\\b.*\\b(hair|long\\s?hair)\\b.*\\b(machine|machines|machinery|moving\\s?parts?|spinning|tool|tools|lathe|drill|drill\\s?press|chuck|spindle|belt|motor)\\b|\\b(scalp|scalped|ripped\\s?out|torn\\s?out|hair\\s?ripped\\s?out|head\\s?injury|neck\\s?injury)\\b",
+      "flags": "i"
+    }
+  ]
+}
+,
+ {
+  "id": "q5a_moving_machinery_signage",
+  "text": "Q5a: Identify the purpose of the signage (warning to keep clear of moving machinery).",
+  "image": "q5a_moving_machinery_signage.jpg",
+  "hint": "What action is it telling you to take, and what injury is it trying to prevent?",
+  "type": "long",
+  "maxPoints": 2,
+  "rubric": [
+   {
+  "points": 1,
+  "check": "\\b(keep\\s?clear|stay\\s?clear|stay\\s?(away|back)|stand\\s?back|keep\\s?away|keep\\s?distance|keep\\s?your\\s?distance|do\\s?not\\s?approach|don'?t\\s?approach|don'?t\\s?go\\s?near|do\\s?not\\s?go\\s?near|do\\s?not\\s?enter|no\\s?entry|restricted\\s?area|keep\\s?out|don'?t\\s?go\\s?past|stay\\s?behind)\\b",
+  "flags": "i"
+},
+    {
+      "points": 1,
+      "check": "\\b(moving\\s?machinery|moving\\s?parts?|danger|hazard|unsafe|caught|entangle(d)?|tangle(d)?|pulled\\s?in|dragged\\s?in|crush(ed|ing)?|injur(y|ies)|hurt|harm|cut|amputat(e|ion)|lose\\s?(a\\s?)?(finger|hand)|serious\\s?injury)\\b",
+      "flags": "i"
+    }
+  ]
+}
+,
+{
+  "id": "q5b_dust_inhalation_signage",
+  "text": "Q5b: Identify the purpose of the signage (warning about dust inhalation / wearing a mask).",
+  "image": "q5b_dust_inhalation_signage.jpg",
+  "hint": "Think about lungs and airborne particles.",
+  "type": "long",
+  "maxPoints": 2,
+"rubric": [
+    {
+      "points": 1,
+      "check": "\\b(wear(s|ing)?\\s*(a\\s*)?(mask|respirator|dust\\s*mask|respiratory\\s*mask)|put\\s*on\\s*(a\\s*)?(mask|respirator|dust\\s*mask|respiratory\\s*mask|ppe|gear)|need(s)?\\s*(to\\s*wear\\s*)?(a\\s*)?(mask|respirator|dust\\s*mask|respiratory\\s*mask)|use\\s*(a\\s*)?(mask|respirator|dust\\s*mask|respiratory\\s*mask)|mask\\s*(required|needed)|respirator\\s*(required|needed)|dust\\s*mask|respiratory\\s*mask|respiratory\\s*protection|breathing\\s*protection|protective\\s*(gear|equipment)|ppe)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(dust|dusty|airborne|air\\s*borne|particles?|inhal(e|ing|ation)|breathe\\s*in|breathing\\s*in|lungs?|respiratory|breath(ing)?|throat|throt|asthma|lung\\s*damage|silicosis|cancer|long\\s*term|harmful\\s*air|bad\\s*air)\\b",
+      "flags": "i"
+    }
+  ]
+}
+,
+      {
+  "id": "q6_nailing_timber_eye_hazard",
+  "text": "Q6: When nailing timber you should always wear eye protection. Describe an eye hazard associated with this activity.",
+  "image": "q6_nailing_timber_eye_hazard.jpg",
+  "hint": "Think about what can fly upward unexpectedly.",
+  "type": "short",
+  "maxPoints": 1,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(eye|eyes)\\b.*\\b(hit|struck|strike|hurt|injur(y|ed)?|damage(d)?|scratch(ed)?|cut|poke(d)?|flick(ed)?|fly(ing)?|ricochet|bounce(d)?|ping(ed)?|something\\s?in\\s?(my|your)\\s?eye|chip(s)?|splinter(s)?|sawdust|wood\\s?(chip|chips|piece|pieces|fragment(s)?|debris)|nail(s)?)\\b|\\b(chip(s)?|splinter(s)?|sawdust|wood\\s?(chip|piece|fragment(s)?|debris)|nail(s)?|ricochet|bounce(d)?|ping(ed)?|fly(ing)?)\\b.*\\b(eye|eyes)\\b",
+      "flags": "i"
+    }
+  ]
+}
+,
+      {
+  "id": "q7_general_ppe_risk",
+  "text": "Q7: Describe the general risks of not maintaining PPE (cleaning, checking damage, correct storage).",
+  "image": "q7_general_ppe_risk.jpg",
+  "hint": "Think: reduced protection and new problems created by dirty/damaged PPE.",
+  "type": "long",
+  "maxPoints": 2,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(won'?t\\s?work|doesn'?t\\s?work|not\\s?work(ing)?|less\\s?effective|reduced\\s?protection|doesn'?t\\s?protect|won'?t\\s?protect|not\\s?protect(ive)?|fails?|fail\\s?to\\s?protect|won'?t\\s?do\\s?its\\s?job|not\\s?do\\s?its\\s?job|not\\s?safe|unsafe)\\b|\\b(protect|protection|effective|safe)\\b.*\\b(reduced|less|won'?t|doesn'?t|not)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(dirty|unclean|hygiene|unhygienic|germs?|bacteria|infection|sick|rash|irritat(e|ion)|dermatitis|contaminat(e|ion)|damaged|broken|crack(ed)?|tear(s|ed)?|hole(s)?|worn\\s?out|poor\\s?fit|doesn'?t\\s?fit|fit\\s?properly|seal|poor\\s?seal|gap(s)?|leak(s|ing)?|fog(gy|ging)?|scratched|extra\\s?risk|additional\\s?hazard)\\b",
+      "flags": "i"
+    }
+  ]
+}
+,
+      {
+  "id": "q7a_safety_glasses",
+  "text": "Q7: Describe a risk of not maintaining safety glasses.",
+  "image": "q7a_safety_glasses.jpg",
+  "hint": "Think: seeing clearly and hygiene.",
+  "type": "long",
+  "maxPoints": 2,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(can'?t\\s?see|cannot\\s?see|hard\\s?to\\s?see|see\\s?properly|see\\s?clearly|blurr(y|ed)|blur|obscured|scratched|scratch(es|ed)?|fog(gy|ging)?|fog\\s?up|cloud(y|ed)?|smudge(d)?|smudg(es)?|dirty\\s?lens(es)?|dust\\s?on\\s?(the\\s?)?lens(es)?|fingerprints?)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(dirty|germs?|bacteria|infection|eye\\s?infection|conjunctivitis|pink\\s?eye|irritat(e|ion)|rash|unhygienic|spread\\s?germs)\\b",
+      "flags": "i"
+    }
+  ]
+}
+,
+        {
+  "id": "q7b_respiratory_protection",
+  "text": "Q7: Describe a risk of not maintaining respiratory protection (mask/respirator).",
+  "image": "q7b_respiratory_protection.jpg",
+  "hint": "Think: filters, sealing, and long-term health effects.",
+  "type": "long",
+  "maxPoints": 2,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(filter(s)?|clog(ged|ging)?|blocked|dirty\\s?filter|seal(s|ing)?|sealed|perish(ed|ing)?|fit|fitting|poor\\s?fit|doesn'?t\\s?fit|leak(s|ing)?|gap(s)?|strap(s)?|broken|damaged|hole(s)?|won'?t\\s?work|not\\s?effective|ineffective|lets?\\s?(dust|fumes?|vapou?r|chemicals?|particles?|toxic\\s?particles?)\\s?(in|through)|allow(s|ing|ed)?\\s?(dust|fumes?|vapou?r|chemicals?|particles?|unfiltered\\s?air)\\s?(in|through)?|breathe\\s?(in)?\\s?(dust|fumes?|vapou?r|chemicals?|particles?)|inhale(d|ing)?\\s?(dust|fumes?|vapou?r|chemicals?|particles?|unfiltered\\s?air)|dust\\s?gets\\s?through|fumes\\s?get\\s?through|particles?\\s?get\\s?through|unfiltered\\s?air|lungs?|breath(ing)?)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(asthma|asthma\\s?attack|lung\\s?damage|lung\\s?disease|respiratory\\s?disease|breath(ing)?\\s?problems|short(ness)?\\s?of\\s?breath|chronic|long\\s?term|permanent|silicosis|cancer|COPD|black\\s?lung|lung\\s?infection(s)?|respiratory\\s?infection(s)?|infection(s)?|dermatitis|skin\\s?irritation|irritation|bacteria|mould|mold)\\b",
+      "flags": "i"
+    }
+  ]
+}
+,
+       {
+  "id": "q7c_ear_muffs",
+  "text": "Q7: Describe a risk of not maintaining ear muffs/hearing protection.",
+  "image": "q7c_ear_muffs.jpg",
+  "hint": "Think: sealing around the ear and what noise does over time.",
+  "type": "long",
+  "maxPoints": 2,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(poor\\s?fit|doesn'?t\\s?fit|fit\\s?properly|seal|sealed|poor\\s?seal|gap(s)?|leak(s|ing)?|noise\\s?(gets|comes)\\s?in|sound\\s?(gets|comes)\\s?in|lets?\\s?noise\\s?in|doesn'?t\\s?block\\s?noise|not\\s?effective|ineffective|less\\s?protection|reduced\\s?protection|won'?t\\s?protect|without\\s?proper\\s?protection|insufficient\\s?protection|not\\s?maintained|poorly\\s?maintained|fails?\\s?to\\s?protect|fails?\\s?to\\s?block\\s?noise|exposed\\s?to\\s?noise|exposure\\s?to\\s?loud\\s?noise|loud\\s?noise\\s?(gets|comes)\\s?through|pads?|pad\\s?damaged|worn\\s?out|foam|cushion(s)?|crack(ed)?|split|broken|damaged|headband|loose)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(hearing\\s?loss|lose\\s?(your\\s?)?hearing|hearing\\s?damage|ear\\s?damage|damage\\s?your\\s?ears?|inner\\s?ear|hair\\s?cells?|tinnitus|ringing\\s?in\\s?(your\\s?)?ears|ears\\s?ring|deaf|deafness|go\\s?deaf|permanent|irreversible|long\\s?term|noise\\s?damage|difficulty\\s?understanding\\s?speech|hearing\\s?problems)\\b",
+      "flags": "i"
+    }
+  ]
+}
+,
+       {
+  "id": "q7d_hard_hat",
+  "text": "Q7: Describe a risk of not maintaining a hard hat.",
+  "image": "q7d_hard_hat.jpg",
+  "hint": "Think: cracks and impact protection.",
+  "type": "long",
+  "maxPoints": 2,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(crack(ed)?|split|damage(d)?|broken|break(s|ing)?|weak|weaken(ed)?|brittle|worn\\s?out|old|UV|sun\\s?damage|strap(s)?|chin\\s?strap|loose|doesn'?t\\s?fit|fit\\s?properly|suspension|padding|inside\\s?band|fails?|won'?t\\s?work|not\\s?effective|less\\s?effective)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(head|skull|brain|concussion|knock(ed)?\\s?out|unconscious|head\\s?injur(y|ies)|brain\\s?injur(y|ies)|skull\\s?fracture|fracture(d)?\\s?skull|serious\\s?injury|injur(y|ies)|hurt|harm)\\b",
+      "flags": "i"
+    }
+  ]
+}
+,
+       {
+  "id": "q7e_gloves",
+  "text": "Q7: Describe a risk of not maintaining gloves.",
+  "image": "q7e_gloves.jpg",
+  "hint": "Think: holes/tears and what hands contact in a workshop.",
+  "type": "long",
+  "maxPoints": 2,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(hole(s)?|tear(s|ed)?|ripped|split|worn\\s?out|worn|thin|damage(d)?|broken|crack(ed)?|leak(s|ing)?|loose|doesn'?t\\s?fit|fit\\s?properly|fall(s)?\\s?apart|not\\s?protect(ive)?|won'?t\\s?protect|ineffective)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(cut(s)?|scratch(es|ed)?|abrasion(s)?|splinter(s)?|sharp\\s?edge(s)?|stab(bed)?|burn(s|t)?|heat|sparks?|chemical(s)?|paint|glue|solvent(s)?|irritat(e|ion)|rash|dermatitis|allerg(y|ic)?|reaction|blister(s)?|friction|infection|germs?|bacteria)\\b",
+      "flags": "i"
+    }
+  ]
+}
+,
+{
+  "id": "q8a_router",
+  "text": "Q8(a): You are using an electric router to shape the edges of a rimu table top.\nIdentify at least FOUR hazards and the PPE that will help.",
+  "image": "q8a_router.jpg",
+  "hint": "Consider hazards to eyes, lungs, hearing, body/clothing, hands and feet.",
+  "type": "long",
+  "maxPoints": 4,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(eye|eyes|safety\\s?glasses|glasses|goggles|face\\s?shield|visor|chip(s)?|splinter(s)?|debris|particle(s)?|flying)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(dust|sawdust|wood\\s?dust|fine\\s?dust|mask|dust\\s?mask|respirator|extraction|vacuum|lungs?|breath(ing)?|inhale(d)?)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(noise|loud|hearing|hearing\\s?loss|tinnitus|ringing\\s?in\\s?ears|ear\\s?muffs?|earmuffs?|ear\\s?plugs?|earplugs?)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(boots?|safety\\s?boots?|shoes?|closed\\s?toe(d)?\\s?(shoes?|footwear)|steel\\s?(cap|toe)|foot|feet|toe(s)?|drop(ped)?|fall(ing)?|crush(ed|ing)?)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(gloves?|hand\\s?protection|hands?|blister(s)?|abrasion(s)?|cut(s)?|scratch(es|ed)?|splinter(s)?|sharp\\s?edge)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(body\\s?protection|overalls?|apron|long\\s?sleeves?|long\\s?pants?|cover\\s?up|protective\\s?clothing|close\\s?fitting|tight\\s?clothing|no\\s?loose\\s?clothing|tie\\s?back\\s?hair|hair\\s?(tied|secured)|remove\\s?jewell?ery|entangle(d)?|caught|pulled\\s?in)\\b",
+      "flags": "i"
+    }
+  ]
+},
+{
+  "id": "q8b_concrete",
+  "text": "Q8(b): You are breaking up a concrete path using a sledge hammer.\nIdentify at least THREE hazards and the PPE that will help.",
+  "image": "q8b_concrete.jpg",
+  "hint": "Think: flying debris, dust, impact noise, hands, and feet.",
+  "type": "long",
+  "maxPoints": 3,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(eye|eyes|safety\\s?glasses|glasses|goggles|face\\s?shield|visor|flying|debris|chip(s)?|fragment(s)?|shard(s)?|particles?|pieces?\\s?of\\s?concrete|rock(s)?|stone(s)?)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(dust|concrete\\s?dust|cement\\s?dust|silica|fine\\s?dust|mask|dust\\s?mask|respirator|lungs?|breath(ing)?|breathe\\s?in|inhale(d)?|respiratory)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(noise|loud|impact\\s?noise|hearing|hearing\\s?loss|tinnitus|ringing\\s?in\\s?ears|ear\\s?muffs?|earmuffs?|ear\\s?plugs?|earplugs?)\\b|\\b(gloves?|hand\\s?protection|hands?|blister(s)?|abrasion(s)?|impact|vibration)\\b|\\b(boots?|safety\\s?boots?|shoes?|closed\\s?toe(d)?\\s?(shoes?|footwear)|steel\\s?(cap|toe)|foot|feet|toe(s)?|drop(ped)?|fall(ing)?|crush(ed|ing)?)\\b|\\b(overalls?|coveralls?|protective\\s?clothing|long\\s?sleeves?|body\\s?protection|abrasion(s)?|bruise(s)?)\\b",
+      "flags": "i"
+    }
+  ]
+},
+{
+  "id": "q8c_lathe",
+  "text": "Q8(c): You are turning a bowl on a wood lathe.\nIdentify at least THREE hazards and the PPE that will help.",
+  "image": "q8c_lathe.jpg",
+  "hint": "Think: high-speed chips, dust, hearing, hair/clothing.",
+  "type": "long",
+  "maxPoints": 3,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(face\\s?shield|visor|goggles|safety\\s?glasses|glasses|eye|eyes|chip(s)?|splinter(s)?|shavings|debris|flying|high\\s?(speed|velocity)|bowl\\s?(breaks?|comes?\\s?off)|piece\\s?flies?)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(dust|sawdust|wood\\s?dust|fine\\s?dust|mask|dust\\s?mask|respirator|extraction|vacuum|lungs?|breath(ing)?|inhale(d)?|respiratory)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(noise|loud|hearing|hearing\\s?loss|tinnitus|ringing\\s?in\\s?ears|ear\\s?muffs?|earmuffs?|ear\\s?plugs?|earplugs?)\\b|\\b(hair|long\\s?hair|clothing|sleeve(s)?|jewell?ery|necklace|bracelet|ring|watch|drawstring(s)?|hoodie\\s?string(s)?)\\b.*\\b(caught|entangle(d)?|tangle(d)?|pulled\\s?in|dragged\\s?in|wrapped)\\b|\\b(tie\\s?back\\s?hair|remove\\s?jewell?ery|no\\s?loose\\s?clothing|close\\s?fitting|roll\\s?up\\s?sleeves?)\\b",
+      "flags": "i"
+    }
+  ]
+},
+{
+  "id": "q8d_unloading_plywood",
+  "text": "Q8(d): You are unloading sheets of plywood off a truck and stacking them in a storage shed.\nIdentify at least THREE hazards and the PPE that will help.",
+  "image": "q8d_unloading_plywood.jpg",
+  "hint": "Think: manual handling, sharp edges/splinters, and feet if sheets drop.",
+  "type": "long",
+  "maxPoints": 3,
+  "rubric": [
+    {
+      "points": 1,
+      "check": "\\b(lift(ing)?|manual\\s?handling|heavy|back|back\\s?strain|strain(ed)?|sprain(ed)?|muscle|bend\\s?(your\\s?)?knees|lift\\s?with\\s?(your\\s?)?legs|team\\s?lift|two\\s?person\\s?lift|ask\\s?for\\s?help|trolley|cart)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(gloves?|hand\\s?protection|splinter(s)?|sharp\\s?edge(s)?|cut(s)?|scratch(es|ed)?|abrasion(s)?|puncture(s)?|pinch(ed)?|hands?)\\b",
+      "flags": "i"
+    },
+    {
+      "points": 1,
+      "check": "\\b(boots?|safety\\s?boots?|shoes?|closed\\s?toe(d)?\\s?(shoes?|footwear)|steel\\s?(cap|toe)|foot|feet|toe(s)?|drop(ped)?|fall(ing)?|crush(ed|ing)?)\\b|\\b(trip(ped)?|slip(ped)?|fall|stumble(d)?|clutter|mess|unsafe\\s?stack|unstable\\s?stack|sheet(s)?\\s?fall(ing)?)\\b|\\b(overalls?|coveralls?|long\\s?sleeves?|protective\\s?clothing|body\\s?protection|bruise(s)?|impact)\\b|\\b(dust|mask|respirator|sawdust|wood\\s?dust|eye|eyes|glasses|goggles)\\b",
+      "flags": "i"
+    }
+  ]
+}
+
+      ]
+    },
+    {
+      "id": "assessment-record-1",
+      "title": "Assessment Record Sheet - 24352 (v3) 1/6",
+      "subtitle": "Demonstrate and apply knowledge of safe working practices in the construction of a BCATS project",
+      "usNumber": "US 24352",
+      "usVersion": "v3",
+      "credits": 2,
+      "standardType": "internal",
+      "questions": [
+        {
+          "id": "project_name_1",
+          "text": "Name the project you were working on.",
+          "image": "project_name_1.jpg",
+          "hint": "Example: stool, toolbox, picture frame, coffee table, etc.",
+          "type": "short",
+          "maxPoints": 1,
+          "rubric": [
+            {
+              "points": 1,
+              "check": ".+",
+              "flags": ""
+            }
+          ]
+        },
+        {
+          "id": "hazard_identified_1",
+          "text": "What hazard did you encounter?",
+          "image": "hazard_identified_1.jpg",
+          "hint": "Name a real hazard you noticed (dust, noise, sharp edge, loose cable, etc.).",
+          "type": "long",
+          "maxPoints": 2,
+          "rubric": [
+          {
+  "points": 1,
+  "check": "\\b(dust|sawdust|wood\\s?dust|fine\\s?dust|MDF\\s?dust|concrete\\s?dust|cement\\s?dust|silica|fumes?|vapou?r|spray|noise|loud|vibration|sharp|blade|cut|splinter|chip|debris|fragment(s)?|shard(s)?|spark(s)?|hot|heat|burn(s)?|fire|flammable|chemical(s)?|paint|glue|solvent(s)?|thinners?|spill(s)?|wet\\s?floor|clutter|mess|offcuts?|slip|trip|fall|electric(ity)?|shock|live\\s?wire|exposed\\s?wire|unguarded|guard\\s?missing|broken|faulty|frayed|unstable|heavy|manual\\s?handling|back\\s?strain|kickback|hair|jewell?ery|ring(s)?|bracelet(s)?|necklace(s)?|loose\\s?clothing|drawstring(s)?|hoodie\\s?string(s)?)\\b",
+  "flags": "i"
+}
+,
+{
+  "points": 1,
+  "check": "\\b(saw|drop\\s?saw|circular\\s?saw|mitre\\s?saw|sander|belt\\s?sander|router|drill|lathe|grinder|angle\\s?grinder|nail\\s?gun|hammer|chisel|bench|work\\s?bench|vice|clamp(s)?|machine|tool|cable|cord|lead|power\\s?lead|extension|workshop|floor|walkway|storage|shed|truck|plywood|sheet(s)?|timber|wood|concrete)\\b",
+  "flags": "i"
+}
+          ]
+        },
+        {
+          "id": "ppe_required_1",
+          "text": "PPE required (specify or N/A).",
+          "image": "ppe_required_1.jpg",
+          "hint": "List the PPE you actually used (e.g., safety glasses, ear muffs, dust mask).",
+          "type": "short",
+          "maxPoints": 1,
+          "rubric": [
+           {
+  "points": 1,
+  "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear[\\s-]*(muff|muffs|plug|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN\\/?A\\b",
+  "flags": "i"
+}
+          ]
+        },
+        {
+          "id": "comments_1",
+          "text": "What could have happened if this hazard went unchecked?",
+          "image": "comments_1.jpg",
+          "hint": "Describe a realistic outcome (injury, damage, accident).",
           "type": "long",
           "maxPoints": 2,
           "rubric": [
             {
               "points": 1,
-              "check": "\\b(straight|flat|true|square|no\\s*twist|twist|wind|bow|bowed|cup|cupped|warp|warped|crook|crooked|bent|curve|curved)\\b",
+              "check": "\\b(could|might|may|would|risk|result|cause|lead to)\\b",
               "flags": "i"
             },
             {
               "points": 1,
-              "check": "\\b(defect|defects|blemish|blemishes|knot|knots|crack|cracks|split|splits|stain|stains|damage|mark|marks|grain|pattern|figure|colour|color|appearance|seen|visible|best\\s*side|long\\s*enough|length)\\b",
+              "check": "\\b(injur(y|ies)|hurt|cut|burn|eye|blind|hearing|tinnitus|trip|fall|shock|strain|damage|accident)\\b",
               "flags": "i"
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "assessment-record-2",
+      "title": "Assessment Record Sheet - 24352 (v3) 2/6",
+      "subtitle": "Demonstrate and apply knowledge of safe working practices in the construction of a BCATS project",
+      "usNumber": "US 24352",
+      "usVersion": "v3",
+      "credits": 2,
+      "standardType": "internal",
+      "questions": [
         {
-          "id": "q2_mitre_joint_angle",
-          "text": "2.\tWhat is the name of the joint used to join mouldings around a rectangular doorway and what is the angle of the cut?",
-          "image": "miter.png",
-          "hint": "Look at Mitre joints (pages 8–9 area). You need the JOINT NAME and the CUT ANGLE.",
-          "type": "short",
-          "maxPoints": 3,
-          "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(mitre|miter)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(45|forty\\s*five)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(deg|degree|degrees|°)\\b",
-              "flags": "i"
-            }
-          ]
-        },
-        {
-          "id": "q3_lap_dovetail_two_reasons",
-          "text": "3.\tGive two reasons why lap dovetail joints are used for drawer fronts.",
-          "image": "dovetails.jpg",
-          "hint": "Look at Dovetail joints / Lap dovetail (page 9 area). Give TWO reasons (can be short phrases).",
-          "type": "long",
-          "maxPoints": 2,
-          "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(strong|strength|cannot\\s*pull\\s*apart|can'?t\\s*pull\\s*apart|won'?t\\s*pull\\s*apart|resist|prevents|prevent|hold|holding|lock|locking|tight|tension|durable|hard\\s*wearing|long\\s*lasting|repeat|repeated|pulling|drawer\\s*front|front\\s*from\\s*coming\\s*away|come\\s*away)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(hidden|hide|hides|conceal|concealed|not\\s*visible|invisible|not\\s*seen|clean\\s*front|neat|tidy|better\\s*finish|good\\s*finish|looks\\s*good|nice\\s*front|front\\s*looks|appearance)\\b",
-              "flags": "i"
-            }
-          ]
-        },
-        {
-          "id": "q4_stopped_housing",
-          "text": "4.\tWhat is the name of the housing joint where the trench does not extend right across the face of the vertical board?",
-          "image": "SHousing.png",
-          "hint": "Look at Housing joints (page 10 area). It’s the housing where the trench stops short of the front face.",
+          "id": "project_name_2",
+          "text": "Name the project you were working on.",
+          "image": "project_name_2.jpg",
+          "hint": "Example: stool, toolbox, picture frame, coffee table, etc.",
           "type": "short",
           "maxPoints": 1,
           "rubric": [
             {
               "points": 1,
-              "check": "\\b(stopped\\s*housing|stop\\s*housing)\\b",
-              "flags": "i"
+              "check": ".+",
+              "flags": ""
             }
           ]
         },
         {
-          "id": "q5_mortise_tenon_specific_a",
-          "text": "5.\tWhat are the specific names of the following mortise and tenon joints? \n\ta)  Stops a rail from twisting\t\n\t\t",
-          "image": "blank.jpg",
-          "hint": "Look at Mortise and tenon joints (page 11). Match each description to the correct joint name.",
-          "type": "long",
-          "maxPoints": 1,
-          "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(haunch|haunched|haunching)\\b",
-              "flags": "i"
-            }
-          ]
-        },
-        {
-          "id": "q5_mortise_tenon_specific_names_b",
-          "text": "5.\tWhat are the specific names of the following mortise and tenon joints? \n\tb)  Does not penetrate right through the stile\t\n\t",
-          "image": "blank.jpg",
-          "hint": "Look at Mortise and tenon joints (page 11). Match each description to the correct joint name.",
-          "type": "long",
-          "maxPoints": 1,
-          "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(stub|stopped|blind)\\b",
-              "flags": "i"
-            }
-          ]
-        },
-        {
-          "id": "q5_mortise_tenon_specific_names_c",
-          "text": "5.\tWhat are the specific names of the following mortise and tenon joints? \n\tc)  Passes all the way through the stile\t",
-          "image": "blank.jpg",
-          "hint": "Look at Mortise and tenon joints (page 11). Match each description to the correct joint name.",
-          "type": "long",
-          "maxPoints": 1,
-          "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(through)\\b",
-              "flags": "i"
-            }
-          ]
-        },
-        {
-          "id": "q6_dowel_accuracy",
-          "text": "6.\tWhy is it necessary to be accurate when setting out a dowel joint?",
-          "image": "Dowel.png",
-          "hint": "Look at Dowelled joints (page 14). Think: what accuracy helps happen during assembly.",
-          "type": "short",
-          "maxPoints": 2,
-          "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(accurate|accuracy|accurately|precise|precision|exact|careful|correct)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(line\\s*up|lines\\s*up|align|alignment|match\\s*up|fit|fits|go\\s*together|square|straight|flush|no\\s*gaps?|gap\\s*free|perfectly)\\b",
-              "flags": "i"
-            }
-          ]
-        },
-        {
-          "id": "q7_biscuit_tool",
-          "text": "7.\tWhat is the name of the portable power tool used make a biscuit joint?",
-          "image": "biscuit.png",
-          "hint": "Look at Biscuit joints (page 15). It has two common names.",
-          "type": "short",
-          "maxPoints": 1,
-          "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(biscuit\\s*(joiner|jointer|cutter)|plate\\s*joiner)\\b",
-              "flags": "i"
-            }
-          ]
-        },
-        {
-          "id": "q8_three_welded_joints",
-          "text": "8.\tName three of the five basic welded joints.\n\n1.\n2.\n3.\n4.\n5.",
-          "image": "blank.jpg",
-          "hint": "Look at Welding (page 16). Write ANY THREE joint names from the list.",
-          "type": "short",
-          "maxPoints": 3,
-          "rubric": [
-            {
-              "points": 1,
-              "check": "\\b(butt\\s*joint|butt)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(corner\\s*joint|corner)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(tee\\s*joint|t\\s*-?\\s*joint|t\\s*joint|tee)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(lap\\s*joint|lap)\\b",
-              "flags": "i"
-            },
-            {
-              "points": 1,
-              "check": "\\b(edge\\s*joint|edge)\\b",
-              "flags": "i"
-            }
-          ]
-        },
-        {
-          "id": "q9_two_gases",
-          "text": "9.\tWhat are the two most common gases used in gas welding?\n\n1.\n2.",
-          "image": "blank.jpg",
-          "hint": "Look at Gas welding (page 17) and the glossary (page 6). You need TWO gas names.",
-          "type": "short",
-          "maxPoints": 2,
-          "rubric": [
-            {
-              "points": 2,
-              "check": "(?=.*\\b(oxygen|oxy)\\b)(?=.*\\b(acetylene|acetalene|acetalyne)\\b).*",
-              "flags": "i"
-            }
-          ]
-        },
-        {
-          "id": "q10_key_quality_project",
-          "text": "10.\tWhat is the key to producing a quality project?",
-          "image": "blank.jpg",
-          "hint": "Look in the Wood joints intro about what matters most before making joints (page 7 area). A short sentence is fine.",
+          "id": "hazard_identified_2",
+          "text": "What hazard did you encounter?",
+          "image": "hazard_identified_2.jpg",
+          "hint": "Name a real hazard you noticed (dust, noise, sharp edge, loose cable, etc.).",
           "type": "long",
           "maxPoints": 2,
           "rubric": [
            {
   "points": 1,
-  "check": "\\b(preparation|prepare|prepared|prep|planning|plan|working\\s*to\\s*(a\\s*)?drawing|working\\s*to\\s*plan|material\\s*selection|selecting\\s*(the\\s*)?right\\s*material|timber\\s*selection|stock\\s*selection|checking\\s*materials?|check\\s*for\\s*defects|defects?|knots?|cracks?|splits?|material\\s*prep|timber\\s*prep)\\b",
-  "flags": "i"
-},
-{
-  "points": 1,
-  "check": "\\b(accurate|accuracy|accurately|precision|precise|measure|measuring|measurement|double\\s*check|checking\\s*measurements?|working\\s*within\\s*tolerance|tolerance|square|straight|true|flat|90\\s*degrees|right\\s*angle|within\\s*spec|to\\s*spec)\\b",
+  "check": "\\b(dust|sawdust|wood\\s?dust|fine\\s?dust|MDF\\s?dust|concrete\\s?dust|cement\\s?dust|silica|fumes?|vapou?r|spray|noise|loud|vibration|sharp|blade|cut|splinter|chip|debris|fragment(s)?|shard(s)?|spark(s)?|hot|heat|burn(s)?|fire|flammable|chemical(s)?|paint|glue|solvent(s)?|thinners?|spill(s)?|wet\\s?floor|clutter|mess|offcuts?|slip|trip|fall|electric(ity)?|shock|live\\s?wire|exposed\\s?wire|unguarded|guard\\s?missing|broken|faulty|frayed|unstable|heavy|manual\\s?handling|back\\s?strain|kickback|hair|jewell?ery|ring(s)?|bracelet(s)?|necklace(s)?|loose\\s?clothing|drawstring(s)?|hoodie\\s?string(s)?)\\b",
   "flags": "i"
 }
+,
+{
+  "points": 1,
+  "check": "\\b(saw|drop\\s?saw|circular\\s?saw|mitre\\s?saw|sander|belt\\s?sander|router|drill|lathe|grinder|angle\\s?grinder|nail\\s?gun|hammer|chisel|bench|work\\s?bench|vice|clamp(s)?|machine|tool|cable|cord|lead|power\\s?lead|extension|workshop|floor|walkway|storage|shed|truck|plywood|sheet(s)?|timber|wood|concrete)\\b",
+  "flags": "i"
+}
+          ]
+        },
+        {
+          "id": "ppe_required_2",
+          "text": "PPE required (specify or N/A).",
+          "image": "ppe_required_2.jpg",
+          "hint": "List the PPE you actually used (e.g., safety glasses, ear muffs, dust mask).",
+          "type": "short",
+          "maxPoints": 1,
+          "rubric": [
+             {
+  "points": 1,
+  "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear[\\s-]*(muff|muffs|plug|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN\\/?A\\b",
+  "flags": "i"
+}
+          ]
+        },
+        {
+          "id": "comments_2",
+          "text": "What could have happened if this hazard went unchecked?",
+          "image": "comments_2.jpg",
+          "hint": "Describe a realistic outcome (injury, damage, accident).",
+          "type": "long",
+          "maxPoints": 2,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "\\b(could|might|may|would|risk|result|cause|lead to)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(injur(y|ies)|hurt|cut|burn|eye|blind|hearing|tinnitus|trip|fall|shock|strain|damage|accident)\\b",
+              "flags": "i"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assessment-record-3",
+      "title": "Assessment Record Sheet - 24352 (v3) 3/6",
+      "subtitle": "Demonstrate and apply knowledge of safe working practices in the construction of a BCATS project",
+      "usNumber": "US 24352",
+      "usVersion": "v3",
+      "credits": 2,
+      "standardType": "internal",
+      "questions": [
+        {
+          "id": "project_name_3",
+          "text": "Name the project you were working on.",
+          "image": "project_name_3.jpg",
+          "hint": "Example: stool, toolbox, picture frame, coffee table, etc.",
+          "type": "short",
+          "maxPoints": 1,
+          "rubric": [
+            {
+              "points": 1,
+              "check": ".+",
+              "flags": ""
+            }
+          ]
+        },
+        {
+          "id": "hazard_identified_3",
+          "text": "What hazard did you encounter?",
+          "image": "hazard_identified_3.jpg",
+          "hint": "Name a real hazard you noticed (dust, noise, sharp edge, loose cable, etc.).",
+          "type": "long",
+          "maxPoints": 2,
+          "rubric": [
+           {
+  "points": 1,
+  "check": "\\b(dust|sawdust|wood\\s?dust|fine\\s?dust|MDF\\s?dust|concrete\\s?dust|cement\\s?dust|silica|fumes?|vapou?r|spray|noise|loud|vibration|sharp|blade|cut|splinter|chip|debris|fragment(s)?|shard(s)?|spark(s)?|hot|heat|burn(s)?|fire|flammable|chemical(s)?|paint|glue|solvent(s)?|thinners?|spill(s)?|wet\\s?floor|clutter|mess|offcuts?|slip|trip|fall|electric(ity)?|shock|live\\s?wire|exposed\\s?wire|unguarded|guard\\s?missing|broken|faulty|frayed|unstable|heavy|manual\\s?handling|back\\s?strain|kickback|hair|jewell?ery|ring(s)?|bracelet(s)?|necklace(s)?|loose\\s?clothing|drawstring(s)?|hoodie\\s?string(s)?)\\b",
+  "flags": "i"
+}
+,
+{
+  "points": 1,
+  "check": "\\b(saw|drop\\s?saw|circular\\s?saw|mitre\\s?saw|sander|belt\\s?sander|router|drill|lathe|grinder|angle\\s?grinder|nail\\s?gun|hammer|chisel|bench|work\\s?bench|vice|clamp(s)?|machine|tool|cable|cord|lead|power\\s?lead|extension|workshop|floor|walkway|storage|shed|truck|plywood|sheet(s)?|timber|wood|concrete)\\b",
+  "flags": "i"
+}
+          ]
+        },
+        {
+          "id": "ppe_required_3",
+          "text": "PPE required (specify or N/A).",
+          "image": "ppe_required_3.jpg",
+          "hint": "List the PPE you actually used (e.g., safety glasses, ear muffs, dust mask).",
+          "type": "short",
+          "maxPoints": 1,
+          "rubric": [
+            {
+  "points": 1,
+  "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear[\\s-]*(muff|muffs|plug|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN\\/?A\\b",
+  "flags": "i"
+}
+          ]
+        },
+        {
+          "id": "comments_3",
+          "text": "What could have happened if this hazard went unchecked?",
+          "image": "comments_3.jpg",
+          "hint": "Describe a realistic outcome (injury, damage, accident).",
+          "type": "long",
+          "maxPoints": 2,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "\\b(could|might|may|would|risk|result|cause|lead to)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(injur(y|ies)|hurt|cut|burn|eye|blind|hearing|tinnitus|trip|fall|shock|strain|damage|accident)\\b",
+              "flags": "i"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assessment-record-4",
+      "title": "Assessment Record Sheet - 24352 (v3) 4/6",
+      "subtitle": "Demonstrate and apply knowledge of safe working practices in the construction of a BCATS project",
+      "usNumber": "US 24352",
+      "usVersion": "v3",
+      "credits": 2,
+      "standardType": "internal",
+      "questions": [
+        {
+          "id": "project_name_4",
+          "text": "Name the project you were working on.",
+          "image": "project_name_4.jpg",
+          "hint": "Example: stool, toolbox, picture frame, coffee table, etc.",
+          "type": "short",
+          "maxPoints": 1,
+          "rubric": [
+            {
+              "points": 1,
+              "check": ".+",
+              "flags": ""
+            }
+          ]
+        },
+        {
+          "id": "hazard_identified_4",
+          "text": "What hazard did you encounter?",
+          "image": "hazard_identified_4.jpg",
+          "hint": "Name a real hazard you noticed (dust, noise, sharp edge, loose cable, etc.).",
+          "type": "long",
+          "maxPoints": 2,
+          "rubric": [
+            {
+  "points": 1,
+  "check": "\\b(dust|sawdust|wood\\s?dust|fine\\s?dust|MDF\\s?dust|concrete\\s?dust|cement\\s?dust|silica|fumes?|vapou?r|spray|noise|loud|vibration|sharp|blade|cut|splinter|chip|debris|fragment(s)?|shard(s)?|spark(s)?|hot|heat|burn(s)?|fire|flammable|chemical(s)?|paint|glue|solvent(s)?|thinners?|spill(s)?|wet\\s?floor|clutter|mess|offcuts?|slip|trip|fall|electric(ity)?|shock|live\\s?wire|exposed\\s?wire|unguarded|guard\\s?missing|broken|faulty|frayed|unstable|heavy|manual\\s?handling|back\\s?strain|kickback|hair|jewell?ery|ring(s)?|bracelet(s)?|necklace(s)?|loose\\s?clothing|drawstring(s)?|hoodie\\s?string(s)?)\\b",
+  "flags": "i"
+}
+,
+{
+  "points": 1,
+  "check": "\\b(saw|drop\\s?saw|circular\\s?saw|mitre\\s?saw|sander|belt\\s?sander|router|drill|lathe|grinder|angle\\s?grinder|nail\\s?gun|hammer|chisel|bench|work\\s?bench|vice|clamp(s)?|machine|tool|cable|cord|lead|power\\s?lead|extension|workshop|floor|walkway|storage|shed|truck|plywood|sheet(s)?|timber|wood|concrete)\\b",
+  "flags": "i"
+}
+          ]
+        },
+        {
+          "id": "ppe_required_4",
+          "text": "PPE required (specify or N/A).",
+          "image": "ppe_required_4.jpg",
+          "hint": "List the PPE you actually used (e.g., safety glasses, ear muffs, dust mask).",
+          "type": "short",
+          "maxPoints": 1,
+          "rubric": [
+            {
+  "points": 1,
+  "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear[\\s-]*(muff|muffs|plug|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN\\/?A\\b",
+  "flags": "i"
+}
+          ]
+        },
+        {
+          "id": "comments_4",
+          "text": "What could have happened if this hazard went unchecked?",
+          "image": "comments_4.jpg",
+          "hint": "Describe a realistic outcome (injury, damage, accident).",
+          "type": "long",
+          "maxPoints": 2,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "\\b(could|might|may|would|risk|result|cause|lead to)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(injur(y|ies)|hurt|cut|burn|eye|blind|hearing|tinnitus|trip|fall|shock|strain|damage|accident)\\b",
+              "flags": "i"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assessment-record-5",
+      "title": "Assessment Record Sheet - 24352(v3) 5/6",
+      "attachSignoff": true,
+      "subtitle": "Demonstrate and apply knowledge of safe working practices in the construction of a BCATS project",
+      "usNumber": "US 24352",
+      "usVersion": "v3",
+      "credits": 2,
+      "standardType": "internal",
+      "questions": [
+        {
+          "id": "project_name_5",
+          "text": "Name the project you were working on.",
+          "image": "project_name_5.jpg",
+          "hint": "Example: stool, toolbox, picture frame, coffee table, etc.",
+          "type": "short",
+          "maxPoints": 1,
+          "rubric": [
+            {
+              "points": 1,
+              "check": ".+",
+              "flags": ""
+            }
+          ]
+        },
+        {
+          "id": "hazard_identified_5",
+          "text": "What hazard did you encounter?",
+          "image": "hazard_identified_5.jpg",
+          "hint": "Name a real hazard you noticed (dust, noise, sharp edge, loose cable, etc.).",
+          "type": "long",
+          "maxPoints": 2,
+          "rubric": [
+            {
+  "points": 1,
+  "check": "\\b(dust|sawdust|wood\\s?dust|fine\\s?dust|MDF\\s?dust|concrete\\s?dust|cement\\s?dust|silica|fumes?|vapou?r|spray|noise|loud|vibration|sharp|blade|cut|splinter|chip|debris|fragment(s)?|shard(s)?|spark(s)?|hot|heat|burn(s)?|fire|flammable|chemical(s)?|paint|glue|solvent(s)?|thinners?|spill(s)?|wet\\s?floor|clutter|mess|offcuts?|slip|trip|fall|electric(ity)?|shock|live\\s?wire|exposed\\s?wire|unguarded|guard\\s?missing|broken|faulty|frayed|unstable|heavy|manual\\s?handling|back\\s?strain|kickback|hair|jewell?ery|ring(s)?|bracelet(s)?|necklace(s)?|loose\\s?clothing|drawstring(s)?|hoodie\\s?string(s)?)\\b",
+  "flags": "i"
+}
+,
+           {
+  "points": 1,
+  "check": "\\b(saw|drop\\s?saw|circular\\s?saw|mitre\\s?saw|sander|belt\\s?sander|router|drill|lathe|grinder|angle\\s?grinder|nail\\s?gun|hammer|chisel|bench|work\\s?bench|vice|clamp(s)?|machine|tool|cable|cord|lead|power\\s?lead|extension|workshop|floor|walkway|storage|shed|truck|plywood|sheet(s)?|timber|wood|concrete)\\b",
+  "flags": "i"
+}
+          ]
+        },
+        {
+          "id": "ppe_required_5",
+          "text": "PPE required (specify or N/A).",
+          "image": "ppe_required_5.jpg",
+          "hint": "List the PPE you actually used (e.g., safety glasses, ear muffs, dust mask).",
+          "type": "short",
+          "maxPoints": 1,
+          "rubric": [
+              {
+  "points": 1,
+  "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear[\\s-]*(muff|muffs|plug|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN\\/?A\\b",
+  "flags": "i"
+}
+          ]
+        },
+        {
+          "id": "comments_5",
+          "text": "What could have happened if this hazard went unchecked?",
+          "image": "comments_5.jpg",
+          "hint": "Describe a realistic outcome (injury, damage, accident).",
+          "type": "long",
+          "maxPoints": 2,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "\\b(could|might|may|would|risk|result|cause|lead to)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(injur(y|ies)|hurt|cut|burn|eye|blind|hearing|tinnitus|trip|fall|shock|strain|damage|accident)\\b",
+              "flags": "i"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assessment-record-6",
+      "title": "Assessment Record Sheet - 24352 - final (v3) 6/6",
+      "attachSignoff": true,
+      "subtitle": "Demonstrate and apply knowledge of safe working practices in the construction of a BCATS project",
+      "usNumber": "US 24352",
+      "usVersion": "v3",
+      "credits": 2,
+      "standardType": "internal",
+      "questions": [
+        {
+          "id": "project_name_6",
+          "text": "Name the project you were working on.",
+          "image": "project_name_6.jpg",
+          "hint": "Example: stool, toolbox, picture frame, coffee table, etc.",
+          "type": "short",
+          "maxPoints": 1,
+          "rubric": [
+            {
+              "points": 1,
+              "check": ".+",
+              "flags": ""
+            }
+          ]
+        },
+        {
+          "id": "hazard_identified_6",
+          "text": "What hazard did you encounter?",
+          "image": "hazard_identified_6.jpg",
+          "hint": "Name a real hazard you noticed (dust, noise, sharp edge, loose cable, etc.).",
+          "type": "long",
+          "maxPoints": 2,
+          "rubric": [
+           {
+  "points": 1,
+  "check": "\\b(dust|sawdust|wood\\s?dust|fine\\s?dust|MDF\\s?dust|concrete\\s?dust|cement\\s?dust|silica|fumes?|vapou?r|spray|noise|loud|vibration|sharp|blade|cut|splinter|chip|debris|fragment(s)?|shard(s)?|spark(s)?|hot|heat|burn(s)?|fire|flammable|chemical(s)?|paint|glue|solvent(s)?|thinners?|spill(s)?|wet\\s?floor|clutter|mess|offcuts?|slip|trip|fall|electric(ity)?|shock|live\\s?wire|exposed\\s?wire|unguarded|guard\\s?missing|broken|faulty|frayed|unstable|heavy|manual\\s?handling|back\\s?strain|kickback|hair|jewell?ery|ring(s)?|bracelet(s)?|necklace(s)?|loose\\s?clothing|drawstring(s)?|hoodie\\s?string(s)?)\\b",
+  "flags": "i"
+},
+            {
+  "points": 1,
+  "check": "\\b(saw|drop\\s?saw|circular\\s?saw|mitre\\s?saw|sander|belt\\s?sander|router|drill|lathe|grinder|angle\\s?grinder|nail\\s?gun|hammer|chisel|bench|work\\s?bench|vice|clamp(s)?|machine|tool|cable|cord|lead|power\\s?lead|extension|workshop|floor|walkway|storage|shed|truck|plywood|sheet(s)?|timber|wood|concrete)\\b",
+  "flags": "i"
+}
+          ]
+        },
+        {
+          "id": "ppe_required_6",
+          "text": "PPE required (specify or N/A).",
+          "image": "ppe_required_6.jpg",
+          "hint": "List the PPE you actually used (e.g., safety glasses, ear muffs, dust mask).",
+          "type": "short",
+          "maxPoints": 1,
+          "rubric": [
+             {
+  "points": 1,
+  "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear[\\s-]*(muff|muffs|plug|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN\\/?A\\b",
+  "flags": "i"
+}
+          ]
+        },
+        {
+          "id": "comments_6",
+          "text": "What could have happened if this hazard went unchecked?",
+          "image": "comments_6.jpg",
+          "hint": "Describe a realistic outcome (injury, damage, accident).",
+          "type": "long",
+          "maxPoints": 2,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "\\b(could|might|may|would|risk|result|cause|lead to)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(injur(y|ies)|hurt|cut|burn|eye|blind|hearing|tinnitus|trip|fall|shock|strain|damage|accident)\\b",
+              "flags": "i"
+            }
           ]
         }
       ]

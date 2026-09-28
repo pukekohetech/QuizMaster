@@ -1,0 +1,69 @@
+PHS SAFETY - GOOGLE SUBMISSION SETUP
+====================================
+
+WHAT THIS VERSION DOES
+----------------------
+After a student achieves the required result, the app prepares:
+- completed PDF
+- encrypted editable .puk backup
+
+The main button submits both to Google Drive and updates a Google Sheet register.
+Download PDF, Download .puk and Share PDF are under More options.
+Teacher email notification exists in the Apps Script but is OFF by default.
+
+DRIVE STRUCTURE
+---------------
+PHS Safety Submissions
+  Teacher code - Teacher name
+    US 24352
+      Student ID - Student name
+        StudentID_Name_US24352_assessment-id.pdf
+        StudentID_Name_US24352.puk
+
+The PDF is replaced only when the SAME assessment component is resubmitted.
+The .puk is the student's latest complete editable backup for the unit standard, so it is replaced on each confirmed submission.
+
+The register keeps ONE row per Student + Teacher + Unit Standard. It updates the latest assessment/result/time and increments a deliberate submission count. Exact retry/double-click requests using the same submission ID do not increment the count.
+
+SETUP
+-----
+1. Go to https://script.google.com while signed into the Google account that should own the submissions.
+2. Create a new Apps Script project, for example: PHS Safety Submission Gateway.
+3. Replace Code.gs with the complete contents of GoogleAppsScript-Code.gs from this ZIP.
+4. Save.
+5. Run the setup() function once from the Apps Script editor. Approve the requested Google permissions.
+   - This creates the PHS Safety Submissions Drive folder.
+   - It also creates PHS Safety Submission Register inside that folder.
+6. Deploy > New deployment > Web app.
+7. Execute as: Me.
+8. Who has access: choose the option that allows your student devices to reach the web app without an Apps Script editor login prompt. For a GitHub Pages front end, the common setup is the public/anonymous web-app option available to your Workspace account.
+9. Deploy and copy the URL ending in /exec.
+10. Open submission-settings.json in this app and paste that URL into gateway.url. Example:
+
+   "gateway": {
+     "url": "https://script.google.com/macros/s/DEPLOYMENT_ID/exec",
+     "provider": "apps-script",
+     "destinationLabel": "PHS Safety submission register"
+   }
+
+11. Upload the updated app files to GitHub Pages.
+
+TEST
+----
+Open the /exec URL directly in a browser. You should receive JSON showing state "ready" plus links to the root folder and register.
+Then complete a test assessment in the app and press Submit to Teacher.
+
+OPTIONAL TEACHER NOTIFICATION
+-----------------------------
+In GoogleAppsScript-Code.gs:
+
+  NOTIFY_TEACHER: false
+
+Change false to true and redeploy the Apps Script if you want a short link-only notification email. No files are attached to the email.
+
+IMPORTANT
+---------
+- There is no server-side teacher routing table in this version, as requested. The selected teacher details are sent by the app.
+- The app's existing local autosave, encrypted backup import/export, grading, deadline controls, PDF creation and sign-off behaviour remain in place.
+- The .puk stored in Drive has a stable filename and is replaced by the latest confirmed submission.
+- Different assessment components under the same unit standard do NOT overwrite each other's PDFs.
