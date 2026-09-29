@@ -83,5 +83,100 @@
         }
       ]
     }
+    {
+      "id": "assessment-record-group-demo",
+      "title": "Assessment Record Sheet - 24352 (v3) 1/6",
+      "subtitle": "Demonstrate and apply knowledge of safe working practices in the construction of a BCATS project",
+      "attachSignoff": false,
+      "usNumber": "US 24352",
+      "usVersion": "v3",
+      "credits": 2,
+      "standardType": "internal",
+      "questionGroups": [
+        {
+          "id": "hazard-1",
+          "label": "Hazard record 1 of 6",
+          "title": "One hazard - four connected parts",
+          "intro": "Think about ONE hazard you actually encountered while working on your project. Answer all four parts about that same hazard.",
+          "reminder": "Keep using the SAME hazard for Parts A-D. Do not switch to a different hazard halfway through."
+        }
+      ],
+      "questions": [
+        {
+          "id": "project_name_1",
+          "group": "hazard-1",
+          "part": "A",
+          "text": "What project were you working on when you encountered this hazard?",
+          "hint": "Example: stool, toolbox, picture frame, coffee table, etc.",
+          "type": "short",
+          "maxPoints": 1,
+          "rubric": [
+            {
+              "points": 1,
+              "check": ".+",
+              "flags": ""
+            }
+          ]
+        },
+        {
+          "id": "hazard_identified_1",
+          "group": "hazard-1",
+          "part": "B",
+          "text": "What hazard did you encounter?",
+          "hint": "Name a real hazard you noticed (dust, noise, sharp edge, loose cable, etc.).",
+          "type": "long",
+          "maxPoints": 2,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "\\b(dust|sawdust|wood\\s?dust|fine\\s?dust|MDF\\s?dust|concrete\\s?dust|cement\\s?dust|silica|fumes?|vapou?r|spray|noise|loud|vibration|sharp|blade|cut|splinter|chip|debris|fragment(s)?|shard(s)?|spark(s)?|hot|heat|burn(s)?|fire|flammable|chemical(s)?|paint|glue|solvent(s)?|thinners?|spill(s)?|wet\\s?floor|clutter|mess|offcuts?|slip|trip|fall|electric(ity)?|shock|live\\s?wire|exposed\\s?wire|unguarded|guard\\s?missing|broken|faulty|frayed|unstable|heavy|manual\\s?handling|back\\s?strain|kickback|hair|jewell?ery|ring(s)?|bracelet(s)?|necklace(s)?|loose\\s?clothing|drawstring(s)?|hoodie\\s?string(s)?)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(saw|drop\\s?saw|circular\\s?saw|mitre\\s?saw|sander|belt\\s?sander|router|drill|lathe|grinder|angle\\s?grinder|nail\\s?gun|hammer|chisel|bench|work\\s?bench|vice|clamp(s)?|machine|tool|cable|cord|lead|power\\s?lead|extension|workshop|floor|walkway|storage|shed|truck|plywood|sheet(s)?|timber|wood|concrete)\\b",
+              "flags": "i"
+            }
+          ]
+        },
+        {
+          "id": "ppe_required_1",
+          "group": "hazard-1",
+          "part": "C",
+          "text": "What PPE did you use to protect yourself from this hazard? (Specify or N/A.)",
+          "hint": "List the PPE you actually used (e.g., safety glasses, ear muffs, dust mask).",
+          "type": "short",
+          "maxPoints": 1,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "\\b(safety (glasses|goggles)|face shield|welding helmet|mask|respirator|dust mask|ear[\\s-]*(muff|muffs|plug|plugs)|gloves?|overalls?|apron|hard hat|steel[- ]?cap (boots?|shoes?)|safety boots?)\\b|\\bN\\/?A\\b",
+              "flags": "i"
+            }
+          ]
+        },
+        {
+          "id": "comments_1",
+          "group": "hazard-1",
+          "part": "D",
+          "text": "What could have happened if this hazard had been left unchecked?",
+          "hint": "Describe a realistic outcome (injury, damage, accident).",
+          "type": "long",
+          "maxPoints": 2,
+          "rubric": [
+            {
+              "points": 1,
+              "check": "\\b(could|might|may|would|risk|result|cause|lead to)\\b",
+              "flags": "i"
+            },
+            {
+              "points": 1,
+              "check": "\\b(injur(y|ies)|hurt|cut|burn|eye|blind|hearing|tinnitus|trip|fall|shock|strain|damage|accident)\\b",
+              "flags": "i"
+            }
+          ]
+        }
+      ]
+    }
   ]
 }
