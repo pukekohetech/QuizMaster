@@ -155,10 +155,11 @@ const xorDecode = (value) => {
 let APP_TITLE, APP_SUBTITLE, TEACHERS, ASSESSMENTS;
 let DEADLINE = null;
 let SUBMISSION_SETTINGS = {
-  schemaVersion: 1,
-  gateway: { url: "", provider: "apps-script", destinationLabel: "PHS Safety submission register" },
+  schemaVersion: 2,
+  gateway: { url: "", provider: "apps-script" },
+  storage: { rootName: "", year: "auto" },
   features: { submitPdf: true, submitPuk: true },
-}; // from questions.json.DEADLINE
+}; // submission-settings.json controls the evidence destination
 let lateSubmissionOverride = false; // session-only teacher override
 let lateSubmissionOverrideAt = null;
 
@@ -237,6 +238,7 @@ async function loadSubmissionSettings() {
         ...SUBMISSION_SETTINGS,
         ...loaded,
         gateway: { ...SUBMISSION_SETTINGS.gateway, ...(loaded.gateway || {}) },
+        storage: { ...SUBMISSION_SETTINGS.storage, ...(loaded.storage || {}) },
         features: { ...SUBMISSION_SETTINGS.features, ...(loaded.features || {}) },
       };
     }
@@ -255,6 +257,13 @@ function normaliseSubmissionEndpoint(value) {
 
 function getSubmissionEndpoint() {
   return normaliseSubmissionEndpoint(SUBMISSION_SETTINGS?.gateway?.url);
+}
+
+function getSubmissionRootName() {
+  return String(SUBMISSION_SETTINGS?.storage?.rootName || "")
+    .trim()
+    .replace(/\s+-\s+\d{4}\s*$/, "")
+    .replace(/\s+/g, " ");
 }
 
 function normaliseUnitStandard(value) {
@@ -1421,6 +1430,7 @@ function applyDeadlineLockIfNeeded() {
 let finalData = null;
 let preparedPdfResult = null;
 let preparedPukResult = null;
+let preparedPdfBase64 = null;
 let currentSubmissionId = null;
 let lastConfirmedSubmission = null;
 let pdfPreparationToken = 0;
@@ -1432,6 +1442,7 @@ function clearPreparedPdf() {
   pdfPreparationToken += 1;
   preparedPdfResult = null;
   preparedPukResult = null;
+  preparedPdfBase64 = null;
   currentSubmissionId = null;
   lastConfirmedSubmission = null;
   const receipt = document.getElementById("submissionReceipt");
@@ -1448,7 +1459,8 @@ function canExportCurrentResult() {
 function updatePdfActionState() {
   const pdfReady = !!preparedPdfResult;
   const pukReady = !!preparedPukResult;
-  const packageReady = pdfReady && pukReady;
+  const uploadReady = !!preparedPdfBase64;
+  const packageReady = pdfReady && pukReady && uploadReady;
   const canExport = canExportCurrentResult();
   const busy = pdfActionInProgress || pdfPreparationInProgress || submissionInProgress;
   const downloadBtn = document.getElementById("downloadBtn");
@@ -1467,8 +1479,9 @@ function updatePdfActionState() {
   }
 
   const endpointReady = !!getSubmissionEndpoint();
+  const rootNameReady = !!getSubmissionRootName();
   if (submitTeacherBtn) {
-    submitTeacherBtn.disabled = !canExport || !packageReady || !endpointReady || busy || !!lastConfirmedSubmission;
+    submitTeacherBtn.disabled = !canExport || !packageReady || !endpointReady || !rootNameReady || busy || !!lastConfirmedSubmission;
     submitTeacherBtn.setAttribute("aria-busy", String(submissionInProgress));
     submitTeacherBtn.textContent = lastConfirmedSubmission ? "Submitted ✓" : (submissionInProgress ? "Submitting…" : "Submit to Teacher");
   }
@@ -1477,7 +1490,7 @@ function updatePdfActionState() {
   if (status) {
     if (!canExport) status.textContent = "";
     else if (pdfPreparationInProgress) status.textContent = "Preparing your PDF and secure .puk backup…";
-    else if (pdfReady && pukReady) status.textContent = "Your PDF and editable .puk backup are ready.";
+    else if (pdfReady && pukReady && uploadReady) status.textContent = "Your PDF and editable .puk backup are ready.";
     else if (pdfReady) status.textContent = "PDF ready, but the secure .puk backup could not be prepared.";
     else status.textContent = "Preparation did not finish. Submit & Grade again to retry.";
   }
@@ -1490,11 +1503,14 @@ function updatePdfActionState() {
     } else if (!endpointReady) {
       submissionStatus.textContent = "Teacher submission is not configured yet. Your PDF and .puk can still be saved from More options.";
       submissionStatus.className = "submission-card__status warning";
+    } else if (!rootNameReady) {
+      submissionStatus.textContent = "Evidence storage is not configured. Add storage.rootName to submission-settings.json.";
+      submissionStatus.className = "submission-card__status warning";
     } else if (!packageReady) {
       submissionStatus.textContent = "Preparing your PDF and secure backup for submission…";
       submissionStatus.className = "submission-card__status";
     } else {
-      submissionStatus.textContent = "Ready to submit your PDF and .puk backup to your teacher.";
+      submissionStatus.textContent = `Ready to submit to ${getSubmissionRootName()}.`;
       submissionStatus.className = "submission-card__status ready";
     }
   }
@@ -1513,14 +1529,22 @@ async function preparePdfForExport() {
       pdfFile: typeof File === "function" ? new File([result.pdfBlob], result.fileName, { type: "application/pdf" }) : null,
     };
     try {
-      preparedPukResult = await createProgressBackupForSubmission();
+      // Prepare both expensive client-side submission pieces BEFORE the student
+      // presses Submit to Teacher. This makes the button start uploading at once.
+      const [pukResult, pdfBase64] = await Promise.all([
+        createProgressBackupForSubmission(),
+        blobToBase64(result.pdfBlob),
+      ]);
+      preparedPukResult = pukResult;
+      preparedPdfBase64 = pdfBase64;
       currentSubmissionId = makeSubmissionId();
       showToast("PDF and secure backup ready.");
     } catch (backupError) {
       preparedPukResult = null;
+      preparedPdfBase64 = null;
       currentSubmissionId = null;
       console.error("Submission backup preparation failed:", backupError);
-      showToast("PDF ready, but the .puk backup could not be prepared.", false);
+      showToast("PDF ready, but the submission package could not be prepared.", false);
     }
   } catch (error) {
     if (token === pdfPreparationToken) {
@@ -1719,20 +1743,40 @@ function jsonpRequest(endpoint, params = {}, timeoutMs = 7000) {
   });
 }
 
-async function waitForSubmissionStatus(endpoint, submissionId) {
+async function waitForSubmissionStatus(endpoint, submissionId, rootName) {
+  // Fast cache-only checks first. The gateway deliberately avoids opening Drive
+  // and Sheets for these polls, so a class can confirm submissions cheaply.
+  const delays = [120, 220, 350, 500, 750, 1100, 1600, 2300];
   let last = null;
-  for (let attempt = 0; attempt < 8; attempt += 1) {
-    if (attempt > 0) await new Promise((resolve) => setTimeout(resolve, 650));
+
+  for (const delay of delays) {
+    await new Promise((resolve) => setTimeout(resolve, delay));
     try {
-      const status = await jsonpRequest(endpoint, { action: "status", submissionId }, 6000);
+      const status = await jsonpRequest(
+        endpoint,
+        { action: "status", submissionId, fast: "1", rootName },
+        4500
+      );
       last = status;
       if (status?.state === "confirmed" || status?.state === "duplicate") return status;
       if (status?.state === "error") throw new Error(status.message || "Teacher submission failed.");
     } catch (error) {
-      if (attempt === 7) throw error;
+      // A single confirmation request can fail transiently even though the POST
+      // succeeded. Keep checking before using the slower recovery lookup.
+      last = last || null;
     }
   }
-  return last;
+
+  // One slower recovery check searches the register. This is intentionally only
+  // used after the cheap cache checks have had time to succeed.
+  const recovered = await jsonpRequest(
+    endpoint,
+    { action: "status", submissionId, fast: "0", rootName },
+    6500
+  );
+  if (recovered?.state === "confirmed" || recovered?.state === "duplicate") return recovered;
+  if (recovered?.state === "error") throw new Error(recovered.message || "Teacher submission failed.");
+  return recovered || last;
 }
 
 function renderSubmissionReceipt(status) {
@@ -1746,7 +1790,8 @@ function renderSubmissionReceipt(status) {
   const details = document.createElement("span");
   details.textContent = `${finalData.studentName} · ${finalData.unitStandard} · ${finalData.teacherName}`;
   const files = document.createElement("span");
-  files.textContent = "PDF + .puk saved. The latest .puk replaced the previous copy.";
+  const destination = status?.rootFolderName || getSubmissionRootName();
+  files.textContent = `PDF + .puk saved to ${destination}. The latest .puk replaced the previous copy.`;
   const reference = document.createElement("small");
   reference.textContent = `Reference: ${currentSubmissionId}`;
   receipt.append(heading, details, files, reference);
@@ -1766,6 +1811,8 @@ async function submitToTeacher() {
   if (!preparedPdfResult || !preparedPukResult) return showToast("Your PDF and .puk are still being prepared.", false);
   const endpoint = getSubmissionEndpoint();
   if (!endpoint) return showToast("Teacher submission has not been configured yet.", false);
+  const storageRootName = getSubmissionRootName();
+  if (!storageRootName) return showToast("Evidence storage has not been configured yet.", false);
   if (!navigator.onLine) return showToast("No internet connection. Reconnect and try again.", false);
 
   if (!currentSubmissionId) currentSubmissionId = makeSubmissionId();
@@ -1773,16 +1820,17 @@ async function submitToTeacher() {
   updatePdfActionState();
   const statusEl = document.getElementById("submissionStatus");
   if (statusEl) {
-    statusEl.textContent = "Submitting PDF + .puk and updating the register…";
+    statusEl.textContent = "Uploading PDF + .puk…";
     statusEl.className = "submission-card__status";
   }
 
   try {
-    const pdfBase64 = await blobToBase64(preparedPdfResult.pdfBlob);
+    const pdfBase64 = preparedPdfBase64 || await blobToBase64(preparedPdfResult.pdfBlob);
     const payload = {
       submissionId: currentSubmissionId,
       appId: APP_ID,
       appVersion: APP_VERSION,
+      storageRootName,
       studentName: finalData.studentName,
       studentId: finalData.studentId,
       teacherId: finalData.teacherId,
@@ -1809,7 +1857,8 @@ async function submitToTeacher() {
       cache: "no-store",
     });
 
-    const status = await waitForSubmissionStatus(endpoint, currentSubmissionId);
+    if (statusEl) statusEl.textContent = "Upload received. Confirming the register…";
+    const status = await waitForSubmissionStatus(endpoint, currentSubmissionId, storageRootName);
     if (!status || (status.state !== "confirmed" && status.state !== "duplicate")) {
       throw new Error("The files were sent, but confirmation was not received. Tap Submit to Teacher again to safely retry.");
     }
