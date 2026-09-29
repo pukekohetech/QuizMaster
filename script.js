@@ -653,6 +653,10 @@ function loadAssessment() {
     return;
   }
 
+  // Loading a new assessment should always return the student to the working form.
+  // This also clears any prepared result/submission package from the previous assessment.
+  back();
+
   saveStudentInfo();
 
   // ✅ Lock ID to device after the FIRST assessment load
@@ -763,6 +767,11 @@ function loadAssessment() {
 
   attachProtection();
   showToast("Assessment loaded.");
+
+  // Bring the newly loaded assessment into view, especially when loading from the results screen.
+  window.requestAnimationFrame(() => {
+    document.getElementById("form")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
 }
 
 function gradeIt() {
