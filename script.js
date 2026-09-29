@@ -640,6 +640,22 @@ function saveStudentInfo() {
   storageSet(STORAGE_KEY, JSON.stringify(data));
 }
 
+function shuffledCopy(items) {
+  const shuffled = Array.from(items || []);
+  for (let i = shuffled.length - 1; i > 0; i -= 1) {
+    let j;
+    if (window.crypto?.getRandomValues) {
+      const random = new Uint32Array(1);
+      window.crypto.getRandomValues(random);
+      j = random[0] % (i + 1);
+    } else {
+      j = Math.floor(Math.random() * (i + 1));
+    }
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
 function loadAssessment() {
   const idx = document.getElementById("assessmentSelector").value;
   if (idx === "") {
@@ -738,7 +754,9 @@ function loadAssessment() {
       blankOpt.value = "";
       blankOpt.textContent = "Select an answer";
       field.appendChild(blankOpt);
-      (q.options || []).forEach((opt) => {
+      // Shuffle MC choices each time the assessment is loaded. The saved value
+      // and rubric still use the option text, so marking/restoration are unchanged.
+      shuffledCopy(q.options).forEach((opt) => {
         const o = document.createElement("option");
         o.value = opt;
         o.textContent = opt;

@@ -1,0 +1,25 @@
+QUIZMASTER v4.2 - RANDOMISED MULTIPLE-CHOICE POSITIONS
+=======================================================
+
+WHAT CHANGED
+------------
+- Multiple-choice options are shuffled each time an assessment is loaded.
+- The blank "Select an answer" prompt always stays first.
+- Question order is NOT shuffled.
+- Short and extended-response questions are unchanged.
+- Saved MC answers still restore correctly because QuizMaster stores the answer text, not its position.
+- Marking remains unchanged because rubrics also match the answer text.
+
+FILES TO REPLACE ON GITHUB
+--------------------------
+- script.js
+- index.html
+- sw.js
+
+NO CHANGE REQUIRED
+------------------
+- questions.json
+- submission-settings.json
+- Apps Script / Code.gs
+
+The PWA cache was bumped to v21 so browsers pick up the new behaviour.
