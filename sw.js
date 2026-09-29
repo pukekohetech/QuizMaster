@@ -7,7 +7,7 @@ const CACHE_NAME = 'phs-quizmaster-v18';
 const CORE_ASSETS = [
   "./",
   "./index.html",
-  "./script.js?v=17",
+  "./script.js?v=18",
   "./styles.css?v=15",
   "./reading-comfort.js?v=2",
   "./resource.html",
