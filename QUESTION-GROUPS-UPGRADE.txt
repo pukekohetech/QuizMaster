@@ -1,0 +1,53 @@
+QUIZMASTER v4.3 - QUESTION GROUPS
+==================================
+
+WHAT CHANGED
+------------
+QuizMaster now supports optional multi-part question groups. Existing assessments
+without questionGroups/group/part fields render exactly as before.
+
+NEW JSON FIELDS
+---------------
+At assessment level:
+
+  "questionGroups": [
+    {
+      "id": "hazard-1",
+      "label": "Hazard record 1 of 6",
+      "title": "One hazard - four connected parts",
+      "intro": "Think about ONE hazard...",
+      "reminder": "Keep using the SAME hazard for Parts A-D."
+    }
+  ]
+
+On each connected question:
+
+  "group": "hazard-1",
+  "part": "A"
+
+The part field is optional. If it is omitted, QuizMaster automatically labels
+grouped questions A, B, C, D... in their displayed order.
+
+BEHAVIOUR
+---------
+- Questions in the same group appear inside one large visual card.
+- Each part remains its own normal QuizMaster question for autosave, grading and .puk files.
+- MC options are still shuffled.
+- Saved answers still restore normally.
+- Group headings also appear on the graded result and generated PDF.
+- Ungrouped questions are unchanged.
+- Loading an assessment still automatically returns to the form.
+
+FILES TO UPLOAD
+---------------
+Replace/add these files on GitHub:
+- script.js
+- index.html
+- sw.js
+- question-groups.css   (NEW)
+
+Do NOT replace your live questions.json unless you intend to.
+questions-GROUP-DEMO.json is only a ready-made example. Rename/copy it to
+questions.json temporarily if you want to see the grouped Hazard Record layout.
+
+No Apps Script/submission gateway change is required.

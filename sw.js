@@ -2,12 +2,13 @@
 // Update cache name to force cache busting when assets change. 
 // Bump the cache version whenever core assets change. This forces the
 // service worker to re-cache updated files like script.js and questions.json.
-const CACHE_NAME = 'phs-quizmaster-v21-mc-shuffle';
+const CACHE_NAME = 'phs-quizmaster-v22-question-groups';
 
 const CORE_ASSETS = [
   "./",
   "./index.html",
-  "./script.js?v=21",
+  "./script.js?v=22",
+  "./question-groups.css?v=22",
   "./styles.css?v=15",
   "./reading-comfort.js?v=2",
   "./resource.html",
@@ -36,6 +37,7 @@ const NETWORK_FIRST_FILES = new Set([
   "index.html",
   "script.js",
   "styles.css",
+  "question-groups.css",
   "reading-comfort.js",
   "resource.html",
   "questions.json",

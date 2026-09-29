@@ -656,6 +656,91 @@ function shuffledCopy(items) {
   return shuffled;
 }
 
+function questionGroupMap(assessment) {
+  return new Map(
+    (assessment?.questionGroups || []).map((group) => [String(group.id || "").trim(), group])
+      .filter(([id]) => id)
+  );
+}
+
+function questionGroupCounts(assessment) {
+  const counts = new Map();
+  (assessment?.questions || []).forEach((question) => {
+    const groupId = String(question.group || "").trim();
+    if (!groupId) return;
+    counts.set(groupId, (counts.get(groupId) || 0) + 1);
+  });
+  return counts;
+}
+
+function partLabelFromIndex(index) {
+  let value = Math.max(1, Number(index) || 1);
+  let label = "";
+  while (value > 0) {
+    value -= 1;
+    label = String.fromCharCode(65 + (value % 26)) + label;
+    value = Math.floor(value / 26);
+  }
+  return label;
+}
+
+function humaniseGroupId(value) {
+  return String(value || "Question group")
+    .replace(/[_-]+/g, " ")
+    .replace(/\b\w/g, (letter) => letter.toUpperCase());
+}
+
+function createQuestionGroupSection(groupId, definition, totalParts) {
+  const section = document.createElement("section");
+  section.className = "question-group";
+  section.dataset.groupId = groupId;
+
+  const header = document.createElement("div");
+  header.className = "question-group__header";
+
+  const headingText = document.createElement("div");
+  headingText.className = "question-group__heading-text";
+
+  const kicker = document.createElement("div");
+  kicker.className = "question-group__kicker";
+  kicker.textContent = definition?.label || `${totalParts}-part question`;
+  headingText.appendChild(kicker);
+
+  const title = document.createElement("h3");
+  title.className = "question-group__title";
+  title.textContent = definition?.title || humaniseGroupId(groupId);
+  headingText.appendChild(title);
+
+  const introText = String(definition?.intro || "").trim();
+  if (introText) {
+    const intro = document.createElement("p");
+    intro.className = "question-group__intro";
+    intro.textContent = introText;
+    headingText.appendChild(intro);
+  }
+
+  const count = document.createElement("span");
+  count.className = "question-group__count";
+  count.textContent = `${totalParts} part${totalParts === 1 ? "" : "s"}`;
+
+  header.append(headingText, count);
+  section.appendChild(header);
+
+  const reminderText = String(definition?.reminder || "").trim();
+  if (reminderText) {
+    const reminder = document.createElement("div");
+    reminder.className = "question-group__reminder";
+    reminder.textContent = reminderText;
+    section.appendChild(reminder);
+  }
+
+  const body = document.createElement("div");
+  body.className = "question-group__body";
+  section.appendChild(body);
+
+  return { section, body };
+}
+
 function loadAssessment() {
   const idx = document.getElementById("assessmentSelector").value;
   if (idx === "") {
@@ -675,7 +760,7 @@ function loadAssessment() {
 
   saveStudentInfo();
 
-  // ✅ Lock ID to device after the FIRST assessment load
+  // Lock ID to device after the first assessment load.
   if (data.id && !data.idLocked) {
     data.idLocked = true;
     storageSet(STORAGE_KEY, JSON.stringify(data));
@@ -692,22 +777,57 @@ function loadAssessment() {
   const questionsDiv = document.getElementById("questions");
   questionsDiv.innerHTML = "";
 
+  const groupMap = questionGroupMap(ass);
+  const groupCounts = questionGroupCounts(ass);
+  const groupPositions = new Map();
+  let activeGroupId = null;
+  let activeGroupBody = null;
+
   ass.questions.forEach((q) => {
+    const groupId = String(q.group || "").trim();
+    let partLabel = "";
+    let parent = questionsDiv;
+
+    if (groupId) {
+      const position = (groupPositions.get(groupId) || 0) + 1;
+      groupPositions.set(groupId, position);
+      partLabel = String(q.part || "").trim() || partLabelFromIndex(position);
+
+      // Start a fresh visual group whenever the question sequence enters a group.
+      // This preserves the exact JSON question order even if a group is interrupted.
+      if (activeGroupId !== groupId || !activeGroupBody) {
+        const definition = groupMap.get(groupId) || {};
+        const groupUi = createQuestionGroupSection(groupId, definition, groupCounts.get(groupId) || 1);
+        questionsDiv.appendChild(groupUi.section);
+        activeGroupId = groupId;
+        activeGroupBody = groupUi.body;
+      }
+      parent = activeGroupBody;
+    } else {
+      activeGroupId = null;
+      activeGroupBody = null;
+    }
+
     const wrap = document.createElement("div");
-    wrap.className = "question";
+    wrap.className = groupId ? "question question--grouped" : "question";
     wrap.id = "q-" + q.id.toLowerCase();
+    if (groupId) {
+      wrap.dataset.groupId = groupId;
+      wrap.dataset.part = partLabel;
+    }
 
     const header = document.createElement("div");
     header.className = "question-header";
 
     const markSpan = document.createElement("span");
-
     let displayId;
     const simpleMatch = q.id.match(/^q(\d+)$/i);
     if (simpleMatch) displayId = "Q" + simpleMatch[1];
     else displayId = q.id.toUpperCase();
 
-    markSpan.textContent = `${displayId} – ${q.maxPoints} mark${q.maxPoints !== 1 ? "s" : ""}`;
+    markSpan.textContent = groupId
+      ? `Part ${partLabel} – ${q.maxPoints} mark${q.maxPoints !== 1 ? "s" : ""}`
+      : `${displayId} – ${q.maxPoints} mark${q.maxPoints !== 1 ? "s" : ""}`;
     header.appendChild(markSpan);
 
     const typeSpan = document.createElement("span");
@@ -780,7 +900,7 @@ function loadAssessment() {
     if (prev) field.value = prev;
 
     wrap.appendChild(field);
-    questionsDiv.appendChild(wrap);
+    parent.appendChild(wrap);
   });
 
   attachProtection();
@@ -797,6 +917,8 @@ function gradeIt() {
   if (idx === "") return { total: 0, results: [], totalPoints: 0 };
 
   const ass = ASSESSMENTS[idx];
+  const groupMap = questionGroupMap(ass);
+  const groupPositions = new Map();
   let total = 0;
   let totalPoints = 0;
 
@@ -821,6 +943,21 @@ function gradeIt() {
     total += earned;
     totalPoints += q.maxPoints;
 
+    const groupId = String(q.group || "").trim();
+    let part = "";
+    let groupTitle = "";
+    let groupIntro = "";
+    let groupReminder = "";
+    if (groupId) {
+      const position = (groupPositions.get(groupId) || 0) + 1;
+      groupPositions.set(groupId, position);
+      part = String(q.part || "").trim() || partLabelFromIndex(position);
+      const definition = groupMap.get(groupId) || {};
+      groupTitle = definition.title || humaniseGroupId(groupId);
+      groupIntro = String(definition.intro || "").trim();
+      groupReminder = String(definition.reminder || "").trim();
+    }
+
     return {
       id: q.id.toUpperCase(),
       earned,
@@ -828,6 +965,11 @@ function gradeIt() {
       answer: ans,
       text: q.text,
       hint: bestHint,
+      group: groupId,
+      part,
+      groupTitle,
+      groupIntro,
+      groupReminder,
     };
   });
 
@@ -1596,6 +1738,7 @@ function submitWork() {
   if (!teacherSel.value) return showToast("Please select your teacher.", false);
   if (!assSel.value) return showToast("Please select an assessment.", false);
 
+  const selectedAssessment = ASSESSMENTS[assSel.value];
   const { total, results, totalPoints } = gradeIt();
   const pct = totalPoints > 0 ? Math.round((total / totalPoints) * 100) : 0;
 
@@ -1615,14 +1758,50 @@ function submitWork() {
   const answersDiv = document.getElementById("answers");
   answersDiv.innerHTML = "";
 
+  let activeResultGroup = null;
   results.forEach((r) => {
+    if (r.group) {
+      if (activeResultGroup !== r.group) {
+        const groupHeading = document.createElement("div");
+        groupHeading.className = "feedback-group-heading";
+        groupHeading.dataset.groupId = r.group;
+
+        const kicker = document.createElement("div");
+        kicker.className = "feedback-group-heading__kicker";
+        kicker.textContent = "Multi-part question";
+        groupHeading.appendChild(kicker);
+
+        const title = document.createElement("h3");
+        title.textContent = r.groupTitle || humaniseGroupId(r.group);
+        groupHeading.appendChild(title);
+
+        if (r.groupIntro) {
+          const intro = document.createElement("p");
+          intro.textContent = r.groupIntro;
+          groupHeading.appendChild(intro);
+        }
+        if (r.groupReminder) {
+          const reminder = document.createElement("p");
+          reminder.className = "feedback-group-heading__reminder";
+          reminder.textContent = r.groupReminder;
+          groupHeading.appendChild(reminder);
+        }
+
+        answersDiv.appendChild(groupHeading);
+        activeResultGroup = r.group;
+      }
+    } else {
+      activeResultGroup = null;
+    }
+
     const fb = document.createElement("div");
 
     const status = r.earned === r.max ? "correct" : r.earned > 0 ? "partial" : "wrong";
     fb.className = `feedback ${status}`;
+    if (r.group) fb.classList.add("feedback--grouped");
 
     const h3 = document.createElement("h3");
-    h3.textContent = `${r.id}: ${r.text}`;
+    h3.textContent = r.group && r.part ? `Part ${r.part}: ${r.text}` : `${r.id}: ${r.text}`;
     fb.appendChild(h3);
 
     const pAns = document.createElement("p");
@@ -1652,7 +1831,6 @@ function submitWork() {
 
   const deadlineNow = getDeadlineStatus(new Date());
 
-  const selectedAssessment = ASSESSMENTS[assSel.value];
   const selectedTeacher = TEACHERS.find((t) => t.id === teacherSel.value) || {};
   finalData = {
     studentName,
@@ -2075,7 +2253,7 @@ async function createAssessmentPdf() {
   const resultHeader = resultSection.querySelector(".result-header");
   if (resultHeader) blocks.push(resultHeader);
 
-  resultSection.querySelectorAll(".feedback").forEach((el) => blocks.push(el));
+  resultSection.querySelectorAll(".feedback-group-heading, .feedback").forEach((el) => blocks.push(el));
   if (blocks.length === 0) blocks.push(resultSection);
 
   drawHeader(true);
