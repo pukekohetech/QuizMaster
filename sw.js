@@ -2,7 +2,7 @@
 // Update cache name to force cache busting when assets change. 
 // Bump the cache version whenever core assets change. This forces the
 // service worker to re-cache updated files like script.js and questions.json.
-const CACHE_NAME = 'phs-safety-l1-v17';
+const CACHE_NAME = 'phs-quizmaster-v18';
 
 const CORE_ASSETS = [
   "./",
