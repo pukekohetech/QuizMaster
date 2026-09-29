@@ -3,6 +3,10 @@
   "VERSION": "2026.09-test2",
   "APP_TITLE": "PHS Quizmaster - Test",
   "APP_SUBTITLE": "Quick submission test",
+   "DEADLINE": {
+    "day": 28,
+    "month": 12,
+    "label": "Submission deadline"},
   "TEACHERS": [
     {
       "id": "RY",
